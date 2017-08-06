@@ -6,9 +6,7 @@
     <div class="scroll-content has-header">
       <news-list :newsDatas="newsDatas" @clickItem="clickItem"></news-list>
     </div>
-
   </div>
-
 </template>
 
 

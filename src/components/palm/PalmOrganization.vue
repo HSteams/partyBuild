@@ -4,25 +4,47 @@
   <div class="palmOrganization">
     <head-nav :title="title"></head-nav>
     <div class="scroll-content has-header">
-      <h1>hello palmOrganization!</h1>
+      <div>
+        <img src="../../assets/img/homePage/section1/orgnization/banner1.png"
+             alt="" class="img-style">
+      </div>
+      <!--多列布局-->
+      <much-col-layout :data="muchColData" @clickItem="goMuchColContent"></much-col-layout>
     </div>
 
   </div>
 </template>
 
 <script>
+  import muchColData from '../../appConfig/organization'
+  import MuchColLayout from '../../components/common/muchColLayout/MuchColLayout'
   export default {
     data () {
       return {
-        title: ''
+        title: '',
+        muchColData: muchColData
       }
     },
-    created () {
+    components: {
+      'much-col-layout': MuchColLayout
+    },
+    activated () {
       this.title = this.$route.params.title
+    },
+    methods: {
+      // 进入多列布局内容
+      goMuchColContent (index) {
+        this.$router.push(muchColData[index].path)
+      }
     }
   }
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+  .palmOrganization{
+    .img-style{
+      width:100%;
+      height: 200px;
+    }
+  }
 </style>

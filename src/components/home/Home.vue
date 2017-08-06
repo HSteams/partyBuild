@@ -5,6 +5,7 @@
     <!--轮播图-->
     <viwe-pager :data="swipeData" @clickPic="goViwePagerDetail"></viwe-pager>
     <!--多列布局-->
+    <div class="has-header"></div>
     <much-col-layout :data="muchColData" @clickItem="goMuchColContent"></much-col-layout>
   </div>
 </template>
@@ -29,11 +30,11 @@
       goViwePagerDetail (newsId) {
         this.$router.push({ name: 'newsDetailPage', params: {type: this.newsType, id: newsId} })
       },
-      // 进入多列布局内容
+
+      // 请求轮播图片// 进入多列布局内容
       goMuchColContent (index) {
         this.$router.push(muchColData[index].path)
       },
-      // 请求轮播图片
       reqSwipe () {
         var param = {
           page: 0,
