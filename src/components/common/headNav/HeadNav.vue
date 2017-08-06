@@ -3,9 +3,9 @@
 <template>
   <div class="HeadNav">
     <mt-header fixed class="header_nav"  :title="title">
-      <button class="back_btn" slot="left" @click="back">
-        <i class="back iconfont icon-back"></i>
-      </button>
+      <mt-button class="back_btn" slot="left" @click="back">
+        <img src="./back.png" alt="" class="img-btn">
+      </mt-button>
     </mt-header>
   </div>
 </template>
@@ -29,17 +29,24 @@
 <style lang="less" scoped>
   .HeadNav{
     .back_btn{
-      line-height: 36px;
-      width: 4px;
+      border: none;
+      background-color: #C7010B;
+      height: 40px;
+      width: 60px;
       text-align: left;
       padding: 0;
+      img{
+        width: 30px;
+        height: 30px;
+      }
 
     }
-
     .back{
+
       font-size: 20px;
       color: white;
       font-weight: bold;
+
     }
   }
 </style>

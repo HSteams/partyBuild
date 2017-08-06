@@ -28,20 +28,21 @@
 
 <style scoped>
 
-  .mutiple_select{
-
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 0px;
+  .mutiple_select:after{
+    content: '';
+    display: table;
+    clear:both;
   }
 
   .mutiple_select .item{
-    flex: 1 33%;
+    float: left;
+    width: 33.33%;
     text-align: center;
     border: none;
     font-size: 13px;
     margin-top: 12px;
     color: #666;
+
   }
 
   .mutiple_select .item img{

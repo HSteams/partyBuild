@@ -12,6 +12,7 @@ export default [
 
   {
     path: '/',
+    name: 'main',
     component: cmp('/main/Main'),
     children: [
       { path: '', redirect: '/home' },
@@ -31,5 +32,10 @@ export default [
 
   { path: '/PalmOrganization/:title', name: 'PalmOrganization', component: cmp('/palm/PalmOrganization') },
 
-  { path: '/MemberInteract/:title', name: 'MemberInteract', component: cmp('/interact/MemberInteract') }
+  { path: '/MemberInteract/:title', name: 'MemberInteract', component: cmp('/interact/MemberInteract') },
+  { path: '/Summary/:title', name: 'Summary', component: cmp('/palm/Summary') },
+  { path: '/ThoughtReports/:title', name: 'ThoughtReports', component: cmp('/palm/ThoughtReports') },
+
+  { path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment') },
+  { path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization') }
 ]

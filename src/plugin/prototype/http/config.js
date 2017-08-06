@@ -14,7 +14,5 @@ export default {
   // 心得总结
   uploadPersonalSummary: `${base}/nationComment/submitSummary.do`,
   checkSummary: `${base}/impress/checkByUserId.do`,
-  uploadSummary: `${base}/impress/saveImpress.do`,
-  // 图片上传
-  uploadImage: `${base}/image/uploadBase64.do`
+  uploadSummary: `${base}/impress/saveImpress.do`
 }
