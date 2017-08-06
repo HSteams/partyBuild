@@ -28,7 +28,7 @@
 
       // 进入轮播图详情页
       goViwePagerDetail (newsId) {
-        this.$router.push({ name: 'newsDetailPage', params: {type: this.newsType, id: newsId} })
+        this.$router.push({ name: 'NewsDetail', params: {title: '轮播图详情', type: this.newsType, id: newsId} })
       },
 
       // 请求轮播图片// 进入多列布局内容

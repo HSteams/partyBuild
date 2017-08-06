@@ -2,8 +2,10 @@
 <!--掌上组织生活-->
 <template>
   <div class="palmOrganization">
-    <head-nav :title="title"></head-nav>
+    <head-nav class="fixed" :title="title"></head-nav>
+
     <div class="scroll-content has-header">
+
       <div>
         <img src="../../assets/img/homePage/section1/orgnization/banner1.png"
              alt="" class="img-style">
@@ -19,6 +21,8 @@
   import muchColData from '../../appConfig/organization'
   import MuchColLayout from '../../components/common/muchColLayout/MuchColLayout'
   export default {
+    name: 'organization',
+    components: { MuchColLayout },
     data () {
       return {
         title: '',
@@ -38,9 +42,10 @@
       }
     }
   }
-</script>
+</script >
 
 <style lang="less" scoped>
+
   .palmOrganization{
     .img-style{
       width:100%;

@@ -29,15 +29,5 @@ export default {
   },
   getNewsList (param) {
     return axios.post(config.getNewsList, qs.stringify(param))
-  },
-  uploadImage (param) {
-    return axios.post(config.uploadImage, qs.stringify(param))
-  },
-  checkReport (param) {
-    return axios.post(config.checkReportType, qs.stringify(param))
-  },
-  uploadReport (param) {
-    return axios.post(config.uploadThoughtReport, qs.stringify(param))
   }
-
 }

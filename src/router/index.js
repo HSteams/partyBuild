@@ -18,7 +18,9 @@ router.beforeEach(function (to, from, next) {
     // 根据路由历史记录出栈还是入栈的状态，来设置路由的返回转台
     Router.prototype.isBack = !Router.prototype.pathHistory.pushOrPop(path)
   }
+
   // console.log(Router.prototype.pathHistory)
+
   next()
 })
 

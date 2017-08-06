@@ -26,13 +26,12 @@
 </script>
 
 
-<style scoped>
+<style lang="less" scoped>
 
-  .mutiple_select::after{
-    content:'';
+  .mutiple_select:after{
+    content: '';
     display: table;
-    clear: both;
-
+    clear:both;
   }
 
   .mutiple_select .item{
@@ -43,6 +42,7 @@
     font-size: 13px;
     margin-top: 12px;
     color: #666;
+
   }
 
   .mutiple_select .item img{
