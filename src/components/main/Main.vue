@@ -77,6 +77,7 @@
 
 <style lang="less" scoped>
   .Main{
+    position: relative;
     .header_nav #login_btn{
       color: white;
     }

@@ -3,7 +3,7 @@
 <template>
   <div class="TabBar">
     <mt-tabbar fixed>
-      <mt-tab-item @click.native.prevent="clickItem(index)" class="tabbar_item" v-for="(item,index) in tabItems" :id="index">
+      <mt-tab-item @click.native.prevent="clickItem(index)" :class="{'tabbar_item':true,'actived':selected == index}" v-for="(item,index) in tabItems" :id="index">
         <img slot="icon" :src="selected == index?item.selected_pic:item.normal_pic">
         {{item.title}}
       </mt-tab-item>
@@ -37,12 +37,12 @@
       color: gray!important;
     }
 
-    .tabbar_item.is-selected{
+    .tabbar_item.actived{
       color: #C7010B!important;
       background: transparent!important;
       position: relative;
     }
-    .tabbar_item.is-selected:before{
+    .tabbar_item.actived:before{
       content:'';
       position: absolute;
       left: 0;

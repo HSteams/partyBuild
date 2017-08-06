@@ -4,9 +4,7 @@
   <div class="login">
     <head-nav title="登录"></head-nav>
     <div class="scroll-content has-header">
-
       <img class="logo" src="../../assets/img/homePage/logo.png">
-
       <form>
         <mt-field class="input" placeholder="Input username" v-model="params.id_card"></mt-field>
         <mt-field class="input" type="password" placeholder="Input username" v-model="params.password"></mt-field>
