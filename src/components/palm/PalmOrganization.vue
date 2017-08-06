@@ -29,9 +29,6 @@
         muchColData: muchColData
       }
     },
-    components: {
-      'much-col-layout': MuchColLayout
-    },
     activated () {
       this.title = this.$route.params.title
     },
