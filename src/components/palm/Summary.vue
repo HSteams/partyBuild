@@ -1,7 +1,6 @@
 <!--Created by lala on 17/8/6-->
 <template>
   <div class="Summary">
-    <head-nav :title="title"></head-nav>
     <div class="scroll-content has-header" style="width:100%">
       <upload-image @selectPicture="handleAccept" v-if="type==-1"></upload-image>
       <div style="display: block" class="align-center">
@@ -25,7 +24,10 @@
   export default {
     data () {
       return {
-        title: '心得总结',
+        header: {
+          title: '心得总结'
+        },
+
         myFile: '',
         arr: [],
         type: -1,

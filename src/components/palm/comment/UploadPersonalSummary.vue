@@ -2,7 +2,6 @@
 <!--Created by lala on 17/8/6-->
 <template>
   <div class="Summary">
-    <head-nav :title="title"></head-nav>
     <div class="scroll-content has-header" style="width:100%">
       <upload-image @selectPicture="handleAccept"></upload-image>
       <div class="talign">
@@ -18,7 +17,9 @@
   export default {
     data () {
       return {
-        title: '个人心得总结',
+        header: {
+          title: '个人心得总结'
+        },
         myFile: '',
         arr: [],
         type: -1,

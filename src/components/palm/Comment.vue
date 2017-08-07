@@ -1,7 +1,6 @@
 <!--Created by lala on 17/8/6-->
 <template>
   <div class="Comment">
-    <head-nav :title="title"></head-nav>
     <div class="scroll-content has-header" >
       <div class="top-margin">
         <div class="align-center">
@@ -18,7 +17,9 @@
   export default {
     data () {
       return {
-        title: '民主评议'
+        header: {
+          title: '民主评议'
+        }
       }
     },
     mounted () {

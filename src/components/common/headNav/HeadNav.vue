@@ -41,6 +41,9 @@
       clickLeftBtn () {
 
       },
+      clickRightBtn () {
+
+      },
       back () {
 //        if (this.$router.pathHistory.length <= 1) {
 //          return

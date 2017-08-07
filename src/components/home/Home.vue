@@ -22,9 +22,6 @@
         header: {
           hiddenBack: true,
           rightBtns: [{text: '登录'}],
-          clickRightBtn (index) {
-            alert(index)
-          }
         },
         newsType: 0,
         swipeData: null,
@@ -32,6 +29,9 @@
       }
     },
     methods: {
+      clickRightBtn () {
+        this.$router.push('/Login')
+      },
 
       // 进入轮播图详情页
       goViwePagerDetail (newsId) {
@@ -63,7 +63,7 @@
 
 <style scoped>
   .logo{
-    position: absolute;
+    position: fixed;
     left: 4.5px;
     top: 4.5px;
     height: 35px;
