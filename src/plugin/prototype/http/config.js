@@ -14,5 +14,16 @@ export default {
   // 心得总结
   uploadPersonalSummary: `${base}/nationComment/submitSummary.do`,
   checkSummary: `${base}/impress/checkByUserId.do`,
-  uploadSummary: `${base}/impress/saveImpress.do`
+  uploadSummary: `${base}/impress/saveImpress.do`,
+  //  图片上传
+  imageUpload: `${base}/image/uploadBase64.do`,
+  //  民主评议
+  nationCommentJudge: `${base}/nationComment/judgeComment.do`,
+  brabchList: `${base}/branch/findAll.do`,
+  commentExpect: `${base}/nationComment/getComment.do`,
+  partyUserList: `${base}/nationComment/userList.do`,
+  judgeIsComment: `${base}/nationComment/isComment.do`,
+  getPersonalSummary: `${base}/nationComment/userSummary.do`,
+  uploadComment: `${base}/nationComment/userSummary.do`
+
 }

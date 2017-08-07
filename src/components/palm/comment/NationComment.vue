@@ -1,22 +1,20 @@
-<!--Created by lala on 17/8/6-->
+<!--Created by lala on 17/8/7-->
 <template>
-  <div class="FoundOrganization">
-
+  <div class="NationComment">
+    <h1>hello NationComment!</h1>
   </div>
 </template>
 
 <script>
   export default {
     data () {
-      return {
-        title: ''
-      }
+      return {}
     }
   }
 </script>
 
 <style lang='less' scoped>
-  .FoundOrganization{
+  .NationComment{
 
   }
 </style>

@@ -37,5 +37,8 @@ export default [
   { path: '/ThoughtReports/:title', name: 'ThoughtReports', component: cmp('/palm/ThoughtReports') },
 
   { path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment') },
-  { path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization') }
+
+  { path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization') },
+  { path: '/UploadPersonalSummary', name: 'UploadPersonalSummary', component: cmp('/palm/comment/UploadPersonalSummary') },
+  { path: '/NationComment', name: 'NationComment', component: cmp('/palm/comment/NationComment') }
 ]
