@@ -15,7 +15,7 @@ export default [
     name: 'main',
     component: cmp('/main/Main'),
     children: [
-      { path: '', redirect: '/home' },
+      { path: '', redirect: '/Home' },
       { path: 'Home', name: 'Home', component: cmp('/home/Home') },
 
       { path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true} },

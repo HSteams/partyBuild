@@ -2,25 +2,50 @@
 <!--头部组件-->
 <template>
   <div class="HeadNav">
-    <mt-header fixed class="header_nav"  :title="title">
-      <mt-button class="back_btn" slot="left" @click="back">
-        <img src="./back.png" alt="" class="img-btn">
-      </mt-button>
+    <mt-header v-show="!hidden" fixed class="header_nav"  :title="title">
+      <div slot="left">
+        <mt-button class="back-btn" v-show="!hiddenBack"  @click="back">
+          <img src="./back.png" alt="">
+        </mt-button>
+        <mt-button class="btn"  v-for="(item,index) in leftBtns"  @click="clickLeftBtn(index)">
+          <img v-if="item.pic" :src="item.pic" alt="">
+          <span v-if="item.text" v-text="item.text"></span>
+        </mt-button>
+      </div>
+
+      <div slot="right">
+        <mt-button class="btn" v-for="(item,index) in rightBtns"  @click="clickRightBtn(index)">
+          <img v-if="item.pic" :src="item.pic" alt="">
+          <span v-if="item.text" v-text="item.text"></span>
+        </mt-button>
+      </div>
+
+
     </mt-header>
   </div>
 </template>
 
 <script>
   export default {
-    props: {
-      title: {
-        type: String
+    data () {
+      return {
+        title: '',
+        hiddenBack: true,
+        hidden: false,
+        leftBtns: [],
+        rightBtns: []
       }
     },
     name: 'head-nav',
     methods: {
+      clickLeftBtn () {
+
+      },
       back () {
-        this.$router.go(-1)
+//        if (this.$router.pathHistory.length <= 1) {
+//          return
+//        }
+        this.$router.back()
       }
     }
   }
@@ -28,25 +53,6 @@
 
 <style lang="less" scoped>
   .HeadNav{
-    .back_btn{
-      border: none;
-      background-color: #C7010B;
-      height: 40px;
-      width: 60px;
-      text-align: left;
-      padding: 0;
-      img{
-        width: 30px;
-        height: 30px;
-      }
 
-    }
-    .back{
-
-      font-size: 20px;
-      color: white;
-      font-weight: bold;
-
-    }
   }
 </style>

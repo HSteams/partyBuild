@@ -13,6 +13,14 @@
 <script>
   export default {
     name: 'my-party',
+    data () {
+      return {
+        header: {
+          title: '我的党建',
+          hiddenBack: true
+        }
+      }
+    },
     methods: {
       logout () {
         this.$store.commit('logout')

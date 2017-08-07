@@ -2,7 +2,6 @@
 <!--登录页面-->
 <template>
   <div class="login">
-    <head-nav title="登录"></head-nav>
     <div class="scroll-content has-header">
       <img class="logo" src="../../assets/img/homePage/logo.png">
       <form>
@@ -11,11 +10,11 @@
         <button class="login_btn" @click.prevent="login">登录</button>
       </form>
       <!--<form id="login_form">-->
-        <!--<div class="input">-->
-          <!--<input type="text" v-model="params.id_card" name="id_card" class="textField" placeholder="身份证号:" id="card">-->
-        <!--</div>-->
-        <!--<div class="input"><input v-model="params.password" name="password" type="password" class="textField" placeholder="密码:" id="password"></div>-->
-        <!--<button class="login_btn" @click.prevent="login">登录</button>-->
+      <!--<div class="input">-->
+      <!--<input type="text" v-model="params.id_card" name="id_card" class="textField" placeholder="身份证号:" id="card">-->
+      <!--</div>-->
+      <!--<div class="input"><input v-model="params.password" name="password" type="password" class="textField" placeholder="密码:" id="password"></div>-->
+      <!--<button class="login_btn" @click.prevent="login">登录</button>-->
       <!--</form>-->
     </div>
 
@@ -29,6 +28,9 @@
     components: { Indicator, MessageBox },
     data () {
       return {
+        header: {
+          title: ''
+        },
         params: {
           id_card: '',
           password: ''

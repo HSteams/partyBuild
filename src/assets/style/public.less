@@ -1,4 +1,4 @@
-
+@import "var";
 html,body{
   margin: 0;
   padding: 0;
@@ -20,26 +20,39 @@ li{
   background: #C7010B;
   font-size: 18px;
   font-weight: bold;
+  height: @header-height;
+  .back-btn{
+    border: none;
+    background-color: transparent;
+    height: @header-height;
+    width: 60px;
+    text-align: left;
+    padding: 0;
+    img{
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .btn{
+    border: none;
+    min-width: 40px;
+    height: 40px;
+    background-color: transparent;
+    padding: 0;
+    img{
+      height: 30px;
+      vertical-align: middle;
+    }
+  }
 }
 
 .scroll-content {
-  position: absolute!important;
-  left: 0!important;
-  top: 0!important;
-  right: 0!important;
-  bottom: 0!important;
-  overflow: auto!important;
-  margin-top: -1px!important;
-  padding-top: 1px!important;
-  margin-bottom: -1px!important;
-  width: auto!important;
-  height: auto!important;
 }
 
 .has-header{
-  top: 40px!important;
+  padding-top: @header-height;
 }
 
 .has-footer{
-  bottom: 50px!important;
+  padding-bottom: @footer-height;
 }

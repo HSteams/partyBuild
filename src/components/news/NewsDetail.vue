@@ -2,7 +2,6 @@
 <!--新闻详情-->
 <template>
   <div class="news-detail">
-    <head-nav :title="params.title"></head-nav>
     <div class="scroll-content has-header">
       <div class="title" v-text="data.title"></div>
       <div class="content" v-text="data.titledesc"></div>

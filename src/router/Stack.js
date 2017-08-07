@@ -19,6 +19,7 @@ export default class Stack {
   pop () {
     return this.stack.pop()
   }
+
   // 栈的长度
   get length () {
     return this.stack.length

@@ -2,7 +2,6 @@
 <!--新闻列表-->
 <template>
   <div class="news-list">
-    <head-nav :title="title"></head-nav>
     <div class="scroll-content has-header">
       <news-list :newsDatas="newsDatas" @clickItem="clickItem"></news-list>
     </div>
@@ -14,29 +13,29 @@
   import NewsList from '../../components/common/newsList/NewsList'
   import HeadNav from '../common/headNav/HeadNav.vue'
   export default {
+    components: {
+      HeadNav,
+      NewsList
+    },
     data () {
       return {
         newsDatas: [],
-        page: 0,
-        title: ''
+        page: 0
       }
     },
     methods: {
       clickItem (index) {
-        console.log(this.$route.params.title)
-
         this.$router.push({
           name: 'NewsDetail',
           params: {
             type: this.$route.params.type,
-            title: this.$route.params.title,
+            title: this.$route.params.title + '详情',
             id: this.newsDatas[index].newsId
           }
         })
       },
       // 自定义的页面激活方法
       activated () {
-        this.title = this.$route.params.title
         var param = {
           page: this.page, rows: 8, type: this.$route.params.type
         }
@@ -49,10 +48,6 @@
           console.error(err)
         })
       }
-    },
-    components: {
-      HeadNav,
-      NewsList
     }
   }
 </script>

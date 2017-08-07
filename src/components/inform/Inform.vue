@@ -16,6 +16,10 @@
     },
     data () {
       return {
+        header: {
+          title: '通知早知道',
+          hiddenBack: true
+        },
         newsDatas: [],
         newsType: 2,
         page: 0
@@ -28,7 +32,7 @@
           params: {
             id: this.newsDatas[index].newsId,
             type: this.newsType,
-            title: '通知早知道'
+            title: '通知早知道详情'
           }
         })
       }
