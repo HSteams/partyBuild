@@ -23,9 +23,6 @@
     components: { MuchColLayout },
     data () {
       return {
-        header: {
-          title: '123'
-        },
         title: '',
         muchColData: muchColData
       }

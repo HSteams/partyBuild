@@ -1,7 +1,6 @@
 <!--Created by fjl on 2017/7/13-->
 <template>
   <div class="memberInteract">
-    <head-nav :title="title"></head-nav>
     <div class="scroll-content has-header">
       <h1>hello memberInteract!</h1>
     </div>

@@ -19,23 +19,17 @@
     },
     data () {
       return {
-        header: {
-          title: '登录',
-          hasBack: true
-        },
         newsDatas: [],
         page: 0
       }
     },
     methods: {
       clickItem (index) {
-        console.log(this.$route.params.title)
-
         this.$router.push({
           name: 'NewsDetail',
           params: {
             type: this.$route.params.type,
-            title: this.$route.params.title,
+            title: this.$route.params.title + '详情',
             id: this.newsDatas[index].newsId
           }
         })

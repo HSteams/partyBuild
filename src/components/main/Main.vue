@@ -2,14 +2,14 @@
 <!--入口组件,tabbar页面-->
 <template>
   <div class="Main">
-    <mt-header fixed class="header_nav"  :title="selected == 0?'':tabItems[selected].title">
-      <router-link v-show="selected == 0" to="/" slot="left">
-        <img class="party_logo" src="../../assets/img/homePage/logo.png" alt="">
-      </router-link>
-      <div  v-show="selected == 0"  slot="right">
-        <mt-button id="login_btn" @click="login" v-show="!this.$store.getters.token">登录</mt-button>
-      </div>
-    </mt-header>
+    <!--<mt-header fixed class="header_nav"  :title="selected == 0?'':tabItems[selected].title">-->
+      <!--<router-link v-show="selected == 0" to="/" slot="left">-->
+        <!--<img class="party_logo" src="../../assets/img/homePage/logo.png" alt="">-->
+      <!--</router-link>-->
+      <!--<div  v-show="selected == 0"  slot="right">-->
+        <!--<mt-button id="login_btn" @click="login" v-show="!this.$store.getters.token">登录</mt-button>-->
+      <!--</div>-->
+    <!--</mt-header>-->
 
     <main class="scroll-content has-header has-footer">
       <keep-alive><router-view></router-view></keep-alive>
@@ -28,6 +28,11 @@
     components: {HeadNav, TabBar},
     data () {
       return {
+        header: {
+          hiddenBack: true
+        },
+        // 标记为中间路由组件
+        isMiddlePage: true,
         selected: 0,
         tabItems: tabbarItems
       }
@@ -45,7 +50,7 @@
         }
       },
       login () {
-        this.$router.push({name: 'PalmOrganization', params: {title: 'rrr'}})
+        this.$router.push({name: 'Login', params: {title: 'rrr'}})
       },
       /**
        * 找到数组'arr'中某个对象的下标，
@@ -71,7 +76,7 @@
         this.setSelected(newValue.fullPath)
       }
     },
-    created () {
+    activated () {
       // 更新选中状态
       this.setSelected(this.$route.fullPath)
     }

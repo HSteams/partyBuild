@@ -2,10 +2,10 @@
 <!--首页-->
 <template>
   <div class="home">
+    <img class="logo" src="../../assets/img/homePage/logo.png"/>
     <!--轮播图-->
     <viwe-pager :data="swipeData" @clickPic="goViwePagerDetail"></viwe-pager>
     <!--多列布局-->
-    <div class="has-header"></div>
     <much-col-layout :data="muchColData" @clickItem="goMuchColContent"></much-col-layout>
   </div>
 </template>
@@ -19,6 +19,13 @@
     components: { ViwePager, MuchColLayout },
     data () {
       return {
+        header: {
+          hiddenBack: true,
+          rightBtns: [{text: '登录'}],
+          clickRightBtn (index) {
+            alert(index)
+          }
+        },
         newsType: 0,
         swipeData: null,
         muchColData: muchColData
@@ -55,6 +62,12 @@
 </script>
 
 <style scoped>
-
+  .logo{
+    position: absolute;
+    left: 4.5px;
+    top: 4.5px;
+    height: 35px;
+    z-index: 10;
+  }
 </style>
 

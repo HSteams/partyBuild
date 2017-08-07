@@ -15,7 +15,7 @@ export default [
     name: 'main',
     component: cmp('/main/Main'),
     children: [
-      { path: '', redirect: '/home' },
+      { path: '', redirect: '/Home' },
       { path: 'Home', name: 'Home', component: cmp('/home/Home') },
 
       { path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true} },
@@ -24,7 +24,7 @@ export default [
     ]
   },
 
-  { path: '/Login', name: 'Login', component: cmp('/palm/PalmOrganization') },
+  { path: '/Login', name: 'Login', component: cmp('/user/Login') },
 
   { path: '/NewsList/:type/:title', name: 'NewsList', component: cmp('/news/NewsList') },
 

@@ -2,7 +2,7 @@
   <div id="app">
 
     <header>
-      <head-nav ref="header"></head-nav>
+      <head-nav ref="headNav"></head-nav>
     </header>
     <transition :name="$router.pathHistory.isBack?'slide-right':'slide-left'">
       <keep-alive>
@@ -15,19 +15,9 @@
 
 <script>
   import HeadNav from './components/common/headNav/HeadNav.vue'
-
   export default {
     components: {HeadNav},
-    name: 'app',
-    data () {
-      return {
-
-      }
-    },
-    mounted () {
-      this.$refs.header.header.title = '123'
-      console.log(this.$refs.header.header.title)
-    }
+    name: 'app'
   }
 </script>
 

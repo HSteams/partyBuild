@@ -1,8 +1,8 @@
 <!--Created by fjl on 2017/8/1-->
 <!--底部选项卡-->
 <template>
-  <div class="TabBar">
-    <mt-tabbar fixed>
+  <div>
+    <mt-tabbar class="tabbar" fixed>
       <mt-tab-item @click.native.prevent="clickItem(index)" :class="{'tabbar_item':true,'actived':selected == index}" v-for="(item,index) in tabItems" :id="index">
         <img slot="icon" :src="selected == index?item.selected_pic:item.normal_pic">
         {{item.title}}
@@ -31,10 +31,20 @@
   }
 </script>
 
-<style lang="less" scoped>
-  .TabBar{
+<style lang="less">
+  @import "../../../assets/style/var";
+  .tabbar{
+    height: @footer-height;
     .tabbar_item{
+      padding: 4px;
       color: gray!important;
+      .mint-tab-item-icon{
+        height: 20px;
+        img{
+          width: auto;
+          margin: auto;
+        }
+      }
     }
 
     .tabbar_item.actived{
