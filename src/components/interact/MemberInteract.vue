@@ -15,13 +15,16 @@
           <ul v-for="item in commentList">
           <li class="lig"><img :src="item.header" alt="" class="img1"></li>
            <li class="li1"><button class="btn1">党员互动</button><span>{{ item.username}}</span>
-             <div> <img src="img/时间.png" alt=""> <span>{{item.currentTime}}</span>
-             <img src="img/声音.png" alt=""><span>公开</span></div>
+             <div> <img src="./img/时间.png" alt=""> <span>{{item.currentTime}}</span>
+             <img src="./img/声音.png" alt=""><span>公开</span></div>
+
               </li>
             <li class="li3"><span>{{item.content}}</span></li>
+
         </ul>
 
       </mt-loadmore>
+      <div class="imgFix" @click="save"><img src="./img/发布btn.png" alt="" style="width: 60px;height: 60px;"></div>
     </div>
 
   </div>
@@ -49,7 +52,11 @@
           console.log(res.data.rows)
           _this.commentList = res.data.rows
         })
-      }}
+      },
+      save () {
+        this.$router.push('./forumSave')
+      }
+    }
 
   }
 </script>
@@ -112,7 +119,7 @@
   .li1{
     width:80%;
     margin-top: 12px;
-
+     font-size: 14px;
     div{
       color: rgba(0,0,0,0.5);
       margin-top: 5px;
@@ -124,5 +131,10 @@
   .li3{
     margin-left: 10px;
 
+  }
+  .imgFix{
+    position: fixed;
+    left: 80%;
+    bottom: 15%;
   }
 </style>

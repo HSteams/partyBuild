@@ -42,5 +42,7 @@ export default [
   {path: '/integration', name: 'integration', component: cmp('/my/integration')},
   {path: '/message', name: 'message', component: cmp('/interact/message')},
   {path: '/MemberInteract', name: 'MemberInteract', component: cmp('/interact/MemberInteract')},
-  {path: '/comments', name: 'comments', component: cmp('/pictureLink/comments')}
+  {path: '/comments', name: 'comments', component: cmp('/pictureLink/comments')},
+  {path: '/forumSave', name: 'forumSave', component: cmp('/forum/forumSave')},
+  {path: '/forumAdd', name: 'forumAdd', component: cmp('/forum/forumAdd')}
 ]
