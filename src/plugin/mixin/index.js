@@ -1,4 +1,3 @@
-
 export default function (Vue) {
   Vue.mixin({
     methods: {
@@ -8,7 +7,11 @@ export default function (Vue) {
     },
     // vue 自带页面激活钩子
     activated () {
-      if (!this.$router.isBack) {
+      if (this.header) {
+        this.$root.$children[0].$refs.header.title = this.header.title
+        console.log()
+      }
+      if (!this.$router.pathHistory.isBack) {
         // 调用自定义的页面激活方法
         this.activated()
       }

@@ -6,9 +6,9 @@
       <router-link v-show="selected == 0" to="/" slot="left">
         <img class="party_logo" src="../../assets/img/homePage/logo.png" alt="">
       </router-link>
-      <router-link  v-show="selected == 0" to="/login" slot="right">
-        <mt-button id="login_btn" v-show="!this.$store.getters.token">登录</mt-button>
-      </router-link>
+      <div  v-show="selected == 0"  slot="right">
+        <mt-button id="login_btn" @click="login" v-show="!this.$store.getters.token">登录</mt-button>
+      </div>
     </mt-header>
 
     <main class="scroll-content has-header has-footer">
@@ -35,7 +35,7 @@
     methods: {
       // 点击tabbar的item
       clickTabItem (index) {
-        this.$router.push(this.tabItems[index].path)
+        this.$router.replace(this.tabItems[index].path)
       },
       // 根据路由设置tabbar选项的选中状态
       setSelected (path) {
@@ -43,6 +43,9 @@
         if (index >= 0) {
           this.selected = index
         }
+      },
+      login () {
+        this.$router.push({name: 'PalmOrganization', params: {title: 'rrr'}})
       },
       /**
        * 找到数组'arr'中某个对象的下标，

@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <transition :name="$router.isBack?'slide-right':'slide-left'">
+
+    <header>
+      <head-nav ref="header"></head-nav>
+    </header>
+    <transition :name="$router.pathHistory.isBack?'slide-right':'slide-left'">
       <keep-alive>
         <router-view class="app_router_view"></router-view>
       </keep-alive>
@@ -10,11 +14,19 @@
 </template>
 
 <script>
+  import HeadNav from './components/common/headNav/HeadNav.vue'
+
   export default {
+    components: {HeadNav},
     name: 'app',
     data () {
       return {
+
       }
+    },
+    mounted () {
+      this.$refs.header.header.title = '123'
+      console.log(this.$refs.header.header.title)
     }
   }
 </script>
@@ -33,7 +45,6 @@
     }
 
     .slide-left-leave-to, .slide-right-enter {
-
       transform: translate(-100%, 0);
     }
 

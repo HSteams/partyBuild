@@ -24,7 +24,7 @@ export default [
     ]
   },
 
-  { path: '/Login', name: 'Login', component: cmp('/user/Login') },
+  { path: '/Login', name: 'Login', component: cmp('/palm/PalmOrganization') },
 
   { path: '/NewsList/:type/:title', name: 'NewsList', component: cmp('/news/NewsList') },
 

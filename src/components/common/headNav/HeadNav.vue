@@ -12,15 +12,18 @@
 
 <script>
   export default {
-    props: {
-      title: {
-        type: String
+    data () {
+      return {
+        title: ''
       }
     },
     name: 'head-nav',
     methods: {
       back () {
-        this.$router.go(-1)
+//        if (this.$router.pathHistory.length <= 1) {
+//          return
+//        }
+        this.$router.back()
       }
     }
   }

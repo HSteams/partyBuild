@@ -2,8 +2,6 @@
 <!--掌上组织生活-->
 <template>
   <div class="palmOrganization">
-    <head-nav class="fixed" :title="title"></head-nav>
-
     <div class="scroll-content has-header">
 
       <div>
@@ -25,6 +23,9 @@
     components: { MuchColLayout },
     data () {
       return {
+        header: {
+          title: '123'
+        },
         title: '',
         muchColData: muchColData
       }

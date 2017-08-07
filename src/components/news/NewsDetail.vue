@@ -20,6 +20,10 @@
     name: 'news-detail-page',
     data () {
       return {
+        header: {
+          title: '1111',
+          hasBack: true
+        },
         params: {},
         data: {}
       }

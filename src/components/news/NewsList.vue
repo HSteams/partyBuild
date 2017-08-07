@@ -2,7 +2,6 @@
 <!--新闻列表-->
 <template>
   <div class="news-list">
-    <head-nav :title="title"></head-nav>
     <div class="scroll-content has-header">
       <news-list :newsDatas="newsDatas" @clickItem="clickItem"></news-list>
     </div>
@@ -14,11 +13,18 @@
   import NewsList from '../../components/common/newsList/NewsList'
   import HeadNav from '../common/headNav/HeadNav.vue'
   export default {
+    components: {
+      HeadNav,
+      NewsList
+    },
     data () {
       return {
+        header: {
+          title: '登录',
+          hasBack: true
+        },
         newsDatas: [],
-        page: 0,
-        title: ''
+        page: 0
       }
     },
     methods: {
@@ -36,7 +42,6 @@
       },
       // 自定义的页面激活方法
       activated () {
-        this.title = this.$route.params.title
         var param = {
           page: this.page, rows: 8, type: this.$route.params.type
         }
@@ -49,10 +54,6 @@
           console.error(err)
         })
       }
-    },
-    components: {
-      HeadNav,
-      NewsList
     }
   }
 </script>

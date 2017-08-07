@@ -15,12 +15,9 @@ router.beforeEach(function (to, from, next) {
     from.matched[0].name === to.matched[0].name) { // from和to一级路由相同
     Router.prototype.pathHistory.replace(path)
   } else { // from和to一级路由不相
-    // 根据路由历史记录出栈还是入栈的状态，来设置路由的返回转台
-    Router.prototype.isBack = !Router.prototype.pathHistory.pushOrPop(path)
+    // 根据路由历史记录出栈还是入栈
+    Router.prototype.pathHistory.pushOrPop(path)
   }
-
-  // console.log(Router.prototype.pathHistory)
-
   next()
 })
 
