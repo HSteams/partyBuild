@@ -1,28 +1,128 @@
 <!--Created by fjl on 2017/7/13-->
 <template>
   <div class="memberInteract">
-    <head-nav :title="title"></head-nav>
+
+    <head-nav :title="title">
+
+    </head-nav>
+    <div class="div1">
+      <input type="text" placeholder=" 🔍 在党员云互动搜索">
+    </div>
     <div class="scroll-content has-header">
-      <h1>hello memberInteract!</h1>
+     <!-- <h1>hello memberInteract!</h1>-->
+
+      <mt-loadmore style="margin-top: 40px;background-color: #ececec">
+          <ul v-for="item in commentList">
+          <li class="lig"><img :src="item.header" alt="" class="img1"></li>
+           <li class="li1"><button class="btn1">党员互动</button><span>{{ item.username}}</span>
+             <div> <img src="img/时间.png" alt=""> <span>{{item.currentTime}}</span>
+             <img src="img/声音.png" alt=""><span>公开</span></div>
+              </li>
+            <li class="li3"><span>{{item.content}}</span></li>
+        </ul>
+
+      </mt-loadmore>
     </div>
 
   </div>
 </template>
+
 
 <script>
   export default {
     name: '',
     data () {
       return {
-        title: ''
+        title: '',
+        commentList: ''
       }
     },
-    created () {
+    activated () {
       this.title = this.$route.params.title
-    }
+      console.log(this.$route.params)
+      this.getData()
+    },
+    methods: {
+      getData () {
+        var _this = this
+        _this.$http.getMemberList().then(function (res) {
+          console.log(res.data.rows)
+          _this.commentList = res.data.rows
+        })
+      }}
+
   }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+  .div1{
+    background-color:#ececec;
+    height:40px;
+    text-align: center;
+    position: absolute;
+    top:36px;
+    width:100%;
+    z-index: 100;
+  }
+  input{
+    font-size: 16px;
+    width:80%;
+    height:25px;
+    border-radius: 5px;
+    margin-top: 5px;
+    text-align: center;
+    border: 0;
+  }
+  img {
+    width:50px;
+    height:50px;
+  }
+  ul{
+    width:100%;
+    height:120px;
+    margin-bottom: 15px;
+    background-color: white;
 
+  }
+  li{ display: table-cell;
+
+    float: left;
+    img{ width:16px;
+      height:16px;
+      vertical-align: middle;
+    }
+    .img1{
+      width:40px;
+      height:40px;
+      margin: 10px 0 0 10px ;
+    }
+    .btn1{
+      border: 1px solid red;
+      color:red;
+      background-color: white;
+      border-radius: 20px;
+      float: right;
+      margin-right: 20px;
+    }
+  }
+  .lig{
+    width:20%;
+
+  }
+  .li1{
+    width:80%;
+    margin-top: 12px;
+
+    div{
+      color: rgba(0,0,0,0.5);
+      margin-top: 5px;
+      span{
+        vertical-align: middle;
+      }
+    }
+  }
+  .li3{
+    margin-left: 10px;
+
+  }
 </style>
