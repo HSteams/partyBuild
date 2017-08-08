@@ -36,6 +36,7 @@
       },
       // 自定义的页面激活方法
       activated () {
+        this.newsDatas = []
         var param = {
           page: this.page, rows: 8, type: this.$route.params.type
         }
