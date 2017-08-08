@@ -1,6 +1,6 @@
 <!--Created by lala on 17/8/6-->
 <template>
-  <div class="Comment">
+  <div class="Comment" >
     <div class="scroll-content has-header" >
       <div class="top-margin">
         <div class="align-center">

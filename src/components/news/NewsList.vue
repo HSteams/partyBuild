@@ -7,8 +7,6 @@
     </div>
   </div>
 </template>
-
-
 <script>
   import NewsList from '../../components/common/newsList/NewsList'
   import HeadNav from '../common/headNav/HeadNav.vue'
