@@ -1,22 +1,27 @@
 <template>
   <div id="app">
 
+    <!--头部-->
     <header>
       <head-nav ref="headNav"></head-nav>
     </header>
+    <!--主体，程序入口-->
     <transition :name="$router.pathHistory.isBack?'slide-right':'slide-left'">
       <keep-alive>
         <router-view class="app_router_view"></router-view>
       </keep-alive>
     </transition>
-
+    <footer>
+      <my-tab-bar v-show="$router.currentRoute.meta.hasTabbar"></my-tab-bar>
+    </footer>
   </div>
 </template>
 
 <script>
-  import HeadNav from './components/common/headNav/HeadNav.vue'
+  import HeadNav from './components/common/headNav/HeadNav'
+  import MyTabBar from './components/common/tabbar/MyTabBar'
   export default {
-    components: {HeadNav},
+    components: {HeadNav, MyTabBar},
     name: 'app'
   }
 </script>

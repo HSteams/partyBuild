@@ -16,11 +16,12 @@ export default [
     component: cmp('/main/Main'),
     children: [
       { path: '', redirect: '/Home' },
-      { path: 'Home', name: 'Home', component: cmp('/home/Home') },
 
-      { path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true} },
+      { path: 'Home', name: 'Home', component: cmp('/home/Home'), meta: {hasTabbar: true} },
 
-      { path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true} }
+      { path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, hasTabbar: true} },
+
+      { path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, hasTabbar: true} }
     ]
   },
 
