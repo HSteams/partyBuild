@@ -71,8 +71,26 @@ export default {
     return axios.get(config.uploadComment, param)
   },
 //  用户
-  getUserInfo  (param) {
-    return axios.get(config.getUserInfo, param)
+  getMemberList (param) {
+    return axios.post(config.getForumList, qs.stringify(param))
+  },
+  getUserInfo (param) {
+    return axios.get(config.getUserInfo, qs.stringify(param))
+  },
+  changeUserInfo (param) {
+    return axios.post(config.changeUserInfo, qs.stringify(param))
+  },
+  changePwd (param) {
+    return axios.post(config.changePwd, qs.stringify(param))
+  },
+  getForumDetail (param) {
+    return axios.get(config.getForumDetail, qs.stringify(param))
+  },
+  addComment (param) {
+    return axios.post(config.addComment, qs.stringify(param))
+  },
+  saveForum (param) {
+    return axios.post(config.saveForum, qs.stringify(param))
   }
 
 }
