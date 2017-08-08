@@ -40,7 +40,6 @@
 </script >
 
 <style lang="less" scoped>
-
   .palmOrganization{
     .img-style{
       width:100%;

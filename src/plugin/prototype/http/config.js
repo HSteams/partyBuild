@@ -24,6 +24,8 @@ export default {
   partyUserList: `${base}/nationComment/userList.do`,
   judgeIsComment: `${base}/nationComment/isComment.do`,
   getPersonalSummary: `${base}/nationComment/userSummary.do`,
-  uploadComment: `${base}/nationComment/userSummary.do`
+  uploadComment: `${base}/nationComment/userSummary.do`,
+  // 用户
+  getUserInfo: `/user/userInfo.do`
 
 }

@@ -69,6 +69,10 @@ export default {
   },
   uploadComment  (param) {
     return axios.get(config.uploadComment, param)
+  },
+//  用户
+  getUserInfo  (param) {
+    return axios.get(config.getUserInfo, param)
   }
 
 }

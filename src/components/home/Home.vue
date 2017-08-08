@@ -21,7 +21,7 @@
       return {
         header: {
           hiddenBack: true,
-          rightBtns: [{text: '登录'}],
+          rightBtns: [{text: '登录'}]
         },
         newsType: 0,
         swipeData: null,

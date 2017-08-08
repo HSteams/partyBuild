@@ -23,11 +23,22 @@
         myFile: '',
         arr: [],
         type: -1,
-        picList: []
+        picList: [],
+        commentId: ''
       }
     },
-    mounted () {
-
+    activated () {
+//      this.$http.nationCommentJudge().then(function (res) {
+//        console.log(res)
+//        var self = this
+//        if(res.data.type !== 0){
+//            return
+//        }
+//      }).catch()
+      this.$http.getUserInfo().then(function (res) {
+        console.log(res)
+        this.commentId = res.data.commentId
+      }).catch()
     },
     components: {
       'uploadImage': uploadImage
