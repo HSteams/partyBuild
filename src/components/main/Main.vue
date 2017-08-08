@@ -2,9 +2,7 @@
 <!--入口组件,tabbar页面-->
 <template>
   <div class="Main">
-    <main class="scroll-content has-header has-footer">
       <keep-alive><router-view></router-view></keep-alive>
-    </main>
   </div>
 </template>
 

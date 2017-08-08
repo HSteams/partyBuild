@@ -29,6 +29,8 @@ export default function (Vue) {
         headNav.hidden = this.header.hidden
         headNav.leftBtns = this.header.leftBtns
         headNav.rightBtns = this.header.rightBtns
+        headNav.backColor = this.header.backColor
+
         headNav.clickLeftBtn = this.clickLeftBtn
         headNav.clickRightBtn = this.clickRightBtn
       } else if (this.$route.params.title) {

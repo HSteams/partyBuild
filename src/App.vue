@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!--头部-->
-    <header>
+    <header id="header">
       <head-nav ref="headNav"></head-nav>
     </header>
     <!--主体，程序入口-->
@@ -10,7 +10,7 @@
         <router-view :class="{'app_router_view':true,'slide':true}"></router-view>
     </keep-alive>
     </transition>
-    <footer>
+    <footer id="footer">
       <my-tab-bar v-show="$router.currentRoute.meta.hasTabbar"></my-tab-bar>
     </footer>
   </div>
@@ -29,6 +29,7 @@
   @import "./assets/style/public";
   #app {
     .app_router_view{
+      width: 100%;
       position: absolute;
     }
     .slide{

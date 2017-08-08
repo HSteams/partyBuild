@@ -8,7 +8,7 @@
       </li>
       <li  class="liwidth">
         <img src="../../../assets/img/homePage/section1/orgnization/thinkReport/add.png"
-             @click="handleAdd" class="igwidth">
+          @click="handleAdd" class="igwidth">
       </li>
     </ul>
     <input type="file" hidden id="file">
