@@ -21,7 +21,6 @@ export default {
   uploadPersonalSummary: `${base}/nationComment/submitSummary.do`,
   checkSummary: `${base}/impress/checkByUserId.do`,
   uploadSummary: `${base}/impress/saveImpress.do`,
-
   //  图片上传
   imageUpload: `${base}/image/uploadBase64.do`,
   //  民主评议
@@ -37,5 +36,4 @@ export default {
   getForumDetail: `${base}/forum/forumDetail.do`,
   addComment: `${base}/forum/addComment.do`,
   saveForum: `${base}/forum/saveForum.do`
-
 }

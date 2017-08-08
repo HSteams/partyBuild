@@ -1,7 +1,7 @@
 <!--Created by fjl on 2017/8/1-->
 <!--首页-->
 <template>
-  <div class="home">
+  <div class="home has-header has-footer">
     <img class="logo" src="../../assets/img/homePage/logo.png"/>
     <!--轮播图-->
     <viwe-pager :data="swipeData" @clickPic="goViwePagerDetail"></viwe-pager>
@@ -68,14 +68,17 @@
   }
 </script>
 
+<<<<<<< HEAD
+
 <style scoped lang="less">
-  .logo{
-    position: fixed;
-    left: 4.5px;
-    top: 4.5px;
-    height: 35px;
-    z-index: 10;
-  }
+.logo{
+  position: fixed;
+  left: 4.5px;
+  top: 4.5px;
+  height: 35px;
+  z-index: 10;
+}
+
   .div2 {
 
     background: url("../../assets/img/homePage/specialColumn.png");

@@ -1,12 +1,7 @@
 <!--Created by fjl on 2017/7/13-->
 <!--我的党建-->
 <template>
-  <div>
-    <!--<div class="myparty">
-     &lt;!&ndash; <button class="logout" @click="logout">退出登录</button>&ndash;&gt;
-
-    </div>-->
-
+  <div class="has-footer">
     <div class="div2">
       <img :src="img1" alt="">
       <div>马上登录，获取更多党建咨询</div>
@@ -39,9 +34,12 @@
       return {
         header: {
           title: '我的党建',
-          hiddenBack: true
+          hiddenBack: true,
+          backColor: 'rgba(0,0,0,0)'
         },
+
         img1: img
+
       }
     },
     methods: {
@@ -61,9 +59,16 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+  @import "../../assets/style/var";
+  .header{
+    background-color: transparent;
+    height: @header-height;
+    font-size: @header-fontsize;
+  }
+
   .div2 {
-    background-color: #c7010b;
+    background-color: @header-backColor;
     text-align: center;
     color: white;
     border-top: 2px solid rgba(256, 256, 256, 0.1);

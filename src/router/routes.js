@@ -15,18 +15,17 @@ export default [
     name: 'main',
     component: cmp('/main/Main'),
     children: [
+      { path: '', redirect: '/Home' },
 
-      {path: '', redirect: '/Home'},
-      {path: 'Home', name: 'Home', component: cmp('/home/Home')},
+      { path: 'Home', name: 'Home', component: cmp('/home/Home'), meta: {hasTabbar: true} },
 
-      {path: '', redirect: '/home'},
-      {path: 'Home', name: 'Home', component: cmp('/home/Home')},
+      { path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, hasTabbar: true} },
 
-      {path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true}},
-
-      {path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true}}
+      { path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, hasTabbar: true} }
     ]
   },
+
+  {path: '/MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, isTabItem: true}},
 
   {path: '/Login', name: 'Login', component: cmp('/user/Login')},
 
@@ -40,14 +39,16 @@ export default [
   {path: '/Summary/:title', name: 'Summary', component: cmp('/palm/Summary')},
   {path: '/ThoughtReports/:title', name: 'ThoughtReports', component: cmp('/palm/ThoughtReports')},
 
-  {path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment')},
-
-  {path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization')},
   {
     path: '/UploadPersonalSummary',
     name: 'UploadPersonalSummary',
     component: cmp('/palm/comment/UploadPersonalSummary')
   },
+
+  {path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment')},
+
+  {path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization')},
+
   {path: '/NationComment', name: 'NationComment', component: cmp('/palm/comment/NationComment')},
 
   {path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment')},

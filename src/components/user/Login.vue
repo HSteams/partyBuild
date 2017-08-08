@@ -29,7 +29,7 @@
     data () {
       return {
         header: {
-          title: ''
+          title: '登录'
         },
         params: {
           id_card: '',

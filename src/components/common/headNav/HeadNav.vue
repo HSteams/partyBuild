@@ -2,7 +2,7 @@
 <!--头部组件-->
 <template>
   <div class="HeadNav">
-    <mt-header v-show="!hidden" fixed class="header_nav"  :title="title">
+    <mt-header v-show="!hidden" fixed class="header_nav" :style="{'background-color':backColor || '#C7010B'}" :title="title">
       <div slot="left">
         <mt-button class="back-btn" v-show="!hiddenBack"  @click="back">
           <img src="./back.png" alt="">
@@ -32,6 +32,7 @@
         title: '',
         hiddenBack: true,
         hidden: false,
+        backColor: '#C7010B',
         leftBtns: [],
         rightBtns: []
       }

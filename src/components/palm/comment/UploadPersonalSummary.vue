@@ -23,11 +23,23 @@
         myFile: '',
         arr: [],
         type: -1,
-        picList: []
+        picList: [],
+        commentId: ''
       }
     },
-    mounted () {
-
+    activated () {
+      var self = this
+//      this.$http.nationCommentJudge().then(function (res) {
+//        console.log(res)
+//        var self = this
+//        if(res.data.type !== 0){
+//            return
+//        }
+//      }).catch()
+      this.$http.getUserInfo().then(function (res) {
+//        console.log(res)
+        self.commentId = res.data.data.id
+      }).catch()
     },
     components: {
       'uploadImage': uploadImage
@@ -43,10 +55,11 @@
         var self = this
         var data = new FormData()
         data.append('pic_list', self.picList)
+        data.append('comment_id', self.commentId)
         self.$http.uploadPersonalSummary(data).then(function (res) {
 //          console.log(res)
           if (res.data.code === 1) {
-            self.checkData()
+//            self.checkData()
             MessageBox({
               title: 'Notice',
               message: res.data.msg,

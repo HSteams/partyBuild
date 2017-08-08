@@ -1,7 +1,7 @@
 <!--Created by fjl on 2017/8/1-->
 <!--通知早知道-->
 <template>
-  <div class="inform">
+  <div class="inform has-header has-footer">
     <news-list :newsDatas="newsDatas" @clickItem="clickItem"></news-list>
   </div>
 </template>

@@ -30,7 +30,6 @@ export default {
   getNewsList (param) {
     return axios.post(config.getNewsList, qs.stringify(param))
   },
-
   imageUpload (param) {
     return axios.post(config.imageUpload, qs.stringify(param))
   },
