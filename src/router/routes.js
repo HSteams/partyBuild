@@ -10,11 +10,20 @@ function cmp (path) {
 
 export default [
 
-  {path: '', redirect: '/Home'},
+  {
+    path: '/',
+    name: 'main',
+    component: cmp('/main/Main'),
+    children: [
+      { path: '', redirect: '/Home' },
 
-  {path: '/Home', name: 'Home', component: cmp('/home/Home'), meta: {isTabItem: true}},
+      { path: 'Home', name: 'Home', component: cmp('/home/Home'), meta: {hasTabbar: true} },
 
-  {path: '/Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, isTabItem: true}},
+      { path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, hasTabbar: true} },
+
+      { path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, hasTabbar: true} }
+    ]
+  },
 
   {path: '/MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, isTabItem: true}},
 

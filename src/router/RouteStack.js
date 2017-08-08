@@ -20,20 +20,24 @@ export default class RouteStack extends Stack {
   }
 
   // 根据传入的路由来判断入栈还是出栈，并返回true或false
-  pushOrPop (path) {
-    if (this.top2 === path) {
-      this.state = 2
+  pushOrPop (obj) {
+    if (this.top2 && this.top2.path === obj.path) {
       this.pop()
+      this.isBack = true
+      console.log(this)
       return
     }
-    this.state = 1
-    this.push(path)
+    if (this.top) {
+      this.top.top = obj.top
+    }
+    this.push({path: obj.path, top: 0})
+    console.log(this)
+    this.isBack = false
   }
   // 替换栈顶元素
-  replace (path) {
-    this.state = 0
+  replace (obj) {
     this.stack.pop()
-    this.stack.push(path)
+    this.stack.push({path: obj.path, top: 0})
   }
 
   stateChanged (callback) {

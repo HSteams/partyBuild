@@ -11,14 +11,16 @@ const router = new Router({
 })
 
 router.beforeEach(function (to, from, next) {
-  // var top = document.body.scrollTop || document.documentElement.scrollTop
-  var path = to.path
-  if (to.meta.isTabItem && from.meta.isTabItem) { // from和to一级路由相同
-    console.log(true)
-    Router.prototype.pathHistory.replace(path)
+  var obj = {
+    path: to.path,
+    top: document.body.scrollTop || document.documentElement.scrollTop
+  }
+  if (from && from.matched[0] &&
+    from.matched[0].name === to.matched[0].name) { // from和to一级路由相同
+    Router.prototype.pathHistory.replace(obj)
   } else { // from和to一级路由不相
     // 根据路由历史记录出栈还是入栈
-    Router.prototype.pathHistory.pushOrPop(path)
+    Router.prototype.pathHistory.pushOrPop(obj)
   }
 
   next()
