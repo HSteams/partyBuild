@@ -50,7 +50,7 @@
         })
       },
       save () {
-        this.$router.push('./forumSave')
+        this.$router.push('/forumSave')
       }
     }
 

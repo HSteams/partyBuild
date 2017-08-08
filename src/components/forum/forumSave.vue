@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="has-header">
     <span>标题：</span>
-    <input type="text" placeholder="请输入标题">
-    <textarea cols="30" rows="10" placeholder="我要发帖">
-   </textarea>
-    <button class="btn">发表</button>
+    <input type="text" placeholder="请输入标题" v-model="title">
+    <div><textarea cols="30" rows="10" placeholder="我要发帖" v-model="content">
+   </textarea></div>
+    <button class="btn" @click="getData">发布</button>
   </div>
 </template>
 <script>
@@ -13,19 +13,41 @@
       return {
         header: {
           title: '我要发帖'
-        }
+        },
+        title: '',
+        content: ''
+      }
+    },
+    methods: {
+      getData () {
+        this.$http.saveForum({content: this.content}).then(function (res) {
+          console.log(res)
+        })
       }
     }
   }
 </script>
 <style lang="less">
-  div {
-    text-align: center;
-  }
+ .has-header {
+padding-left: 5%;
+ input{
+   font-size: 16px;
+ }
+ textarea{
+   font-size: 16px;
+ }
+  >*{
+      margin-top: 20px;
 
+    }
   .btn {
     width: 120px;
-    color: #b6000a;
-  }
+   background-color: #b6000a;
+    height:36px;
+    border:0;
+    font-size: 18px;
+    color: white;
 
+  }
+  }
 </style>

@@ -7,8 +7,8 @@
         <div class="icon" :style="{backgroundImage:'url('+item.pic+')'}"></div>
         <div class="summary">
           <div class="title" v-text="item.title"></div>
-          <div class="detail" v-text="item.titledesc"></div>
-          <div class="other">
+            <div class="detail" v-text="item.titledesc"></div>
+            <div class="other">
             <span class="time" v-text="item.currentTime"></span>
             <span class="watch">
               <img :src="eye">
@@ -19,12 +19,7 @@
       </li>
     </ul>
   </div>
-
-
 </template>
-
-
-
 <script>
   import eyePic from '../../../assets/img/homePage/section1/xgnews/12-eye.png'
   export default {

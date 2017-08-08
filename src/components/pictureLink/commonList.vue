@@ -40,11 +40,12 @@
         var _this = this
         _this.$http.getMemberList().then(function (res) {
           _this.commentList = res.data.rows
+          console.log(res.data.rows)
         })
       },
       response (id) {
         localStorage.setItem('id', id)
-        this.$router.push('./addComment')
+        this.$router.push('/forumAdd')
       }
     }
 
