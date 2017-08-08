@@ -4,23 +4,42 @@ export default class RouteStack extends Stack {
 
   constructor (maxLength) {
     super(maxLength || 20)
-    this.isBack = false
+    // state有三种情况，值为0：替换，1：入栈，2：出栈
+    this._state = 0
   }
+
+  set state (v) {
+    this._state = v
+    if (this.changeStateCallback) {
+      this.changeStateCallback(v)
+    }
+  }
+
+  get state () {
+    return this._state
+  }
+
   // 根据传入的路由来判断入栈还是出栈，并返回true或false
   pushOrPop (path) {
     if (this.top2 === path) {
+      this.state = 2
       this.pop()
-      this.isBack = true
       return
     }
+    this.state = 1
     this.push(path)
-    this.isBack = false
   }
   // 替换栈顶元素
   replace (path) {
+    this.state = 0
     this.stack.pop()
     this.stack.push(path)
   }
+
+  stateChanged (callback) {
+    this.changeStateCallback = callback
+  }
+
   // 栈顶元素
   get top () {
     if (this.stack.length > 0) {

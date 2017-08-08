@@ -37,6 +37,12 @@ export default function (Vue) {
         headNav.clickLeftBtn = null
         headNav.clickRightBtn = null
       }
+
+      if (this.$router.currentRoute.meta.isTabItem) {
+        app.showTabbar = true
+      } else {
+        app.showTabbar = false
+      }
     }
   })
 }

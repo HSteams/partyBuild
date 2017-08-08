@@ -1,7 +1,7 @@
 <!--Created by fjl on 2017/8/1-->
 <!--首页-->
 <template>
-  <div class="home">
+  <div class="home has-header has-footer">
     <img class="logo" src="../../assets/img/homePage/logo.png"/>
     <!--轮播图-->
     <viwe-pager :data="swipeData" @clickPic="goViwePagerDetail"></viwe-pager>

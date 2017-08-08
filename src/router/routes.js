@@ -10,35 +10,33 @@ function cmp (path) {
 
 export default [
 
-  {
-    path: '/',
-    name: 'main',
-    component: cmp('/main/Main'),
-    children: [
-      { path: '', redirect: '/Home' },
-      { path: 'Home', name: 'Home', component: cmp('/home/Home') },
+  {path: '', redirect: '/Home'},
 
-      { path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true} },
+  {path: '/Home', name: 'Home', component: cmp('/home/Home'), meta: {isTabItem: true}},
 
-      { path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true} }
-    ]
-  },
+  {path: '/Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, isTabItem: true}},
 
-  { path: '/Login', name: 'Login', component: cmp('/user/Login') },
+  {path: '/MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, isTabItem: true}},
 
-  { path: '/NewsList/:type/:title', name: 'NewsList', component: cmp('/news/NewsList') },
+  {path: '/Login', name: 'Login', component: cmp('/user/Login')},
 
-  { path: '/NewsDetail/:type/:title/:id', name: 'NewsDetail', component: cmp('/news/NewsDetail') },
+  {path: '/NewsList/:type/:title', name: 'NewsList', component: cmp('/news/NewsList')},
 
-  { path: '/PalmOrganization/:title', name: 'PalmOrganization', component: cmp('/palm/PalmOrganization') },
+  {path: '/NewsDetail/:type/:title/:id', name: 'NewsDetail', component: cmp('/news/NewsDetail')},
 
-  { path: '/MemberInteract/:title', name: 'MemberInteract', component: cmp('/interact/MemberInteract') },
-  { path: '/Summary/:title', name: 'Summary', component: cmp('/palm/Summary') },
-  { path: '/ThoughtReports/:title', name: 'ThoughtReports', component: cmp('/palm/ThoughtReports') },
+  {path: '/PalmOrganization/:title', name: 'PalmOrganization', component: cmp('/palm/PalmOrganization')},
 
-  { path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment') },
+  {path: '/MemberInteract/:title', name: 'MemberInteract', component: cmp('/interact/MemberInteract')},
 
-  { path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization') },
-  { path: '/UploadPersonalSummary', name: 'UploadPersonalSummary', component: cmp('/palm/comment/UploadPersonalSummary') },
-  { path: '/NationComment', name: 'NationComment', component: cmp('/palm/comment/NationComment') }
+  {path: '/Summary/:title', name: 'Summary', component: cmp('/palm/Summary')},
+
+  {path: '/ThoughtReports/:title', name: 'ThoughtReports', component: cmp('/palm/ThoughtReports')},
+
+  {path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment')},
+
+  {path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization')},
+
+  {path: '/UploadPersonalSummary', name: 'UploadPersonalSummary', component: cmp('/palm/comment/UploadPersonalSummary')},
+
+  {path: '/NationComment', name: 'NationComment', component: cmp('/palm/comment/NationComment')}
 ]
