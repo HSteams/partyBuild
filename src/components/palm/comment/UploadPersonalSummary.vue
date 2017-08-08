@@ -28,6 +28,7 @@
       }
     },
     activated () {
+      var self = this
 //      this.$http.nationCommentJudge().then(function (res) {
 //        console.log(res)
 //        var self = this
@@ -36,8 +37,8 @@
 //        }
 //      }).catch()
       this.$http.getUserInfo().then(function (res) {
-        console.log(res)
-        this.commentId = res.data.commentId
+//        console.log(res)
+        self.commentId = res.data.data.id
       }).catch()
     },
     components: {
@@ -54,10 +55,11 @@
         var self = this
         var data = new FormData()
         data.append('pic_list', self.picList)
+        data.append('comment_id', self.commentId)
         self.$http.uploadPersonalSummary(data).then(function (res) {
 //          console.log(res)
           if (res.data.code === 1) {
-            self.checkData()
+//            self.checkData()
             MessageBox({
               title: 'Notice',
               message: res.data.msg,

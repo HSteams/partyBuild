@@ -68,6 +68,7 @@
   }
 </script>
 
+<<<<<<< HEAD
 
 <style scoped lang="less">
 .logo{
@@ -77,6 +78,7 @@
   height: 35px;
   z-index: 10;
 }
+
   .div2 {
 
     background: url("../../assets/img/homePage/specialColumn.png");
@@ -96,6 +98,5 @@
  .img3{
    width:100%;
  }
-
 </style>
 

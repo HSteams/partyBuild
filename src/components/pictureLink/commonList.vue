@@ -5,14 +5,21 @@
     <mt-loadmore style="margin-top: 40px;background-color: #ececec">
       <ul v-for="item in commentList">
         <li class="lig"><img :src="item.header" alt="" class="img1"></li>
+<<<<<<< HEAD
         <li class="li1"><span>{{ item.username}}</span>
           <button class="btn1" @click="forumDetail(item.forumId)">两学一做</button>
           <div><img src="../interact/img/信息.png" alt=""> <span>{{item.currentTime}}</span>
             <img src="../interact/img/信息.png" alt=""><span>公开</span></div>
+=======
+        <li class="li1"><span>{{item.username}}</span>
+          <button class="btn1">两学一做</button>
+          <div><img src="../interact/img/时间.png" alt=""> <span>{{item.currentTime}}</span>
+            <img src="../interact/img/声音.png" alt=""><span>公开</span></div>
+>>>>>>> b4c3254fcb1bc62b22b8dfcf87347a81c6f8ecc2
         </li>
         <li class="li3">
           <span>{{item.content}}</span>
-          <div class="huiFu" @click="response(item.forumId, item.comment)">
+          <div class="huiFu" @click="response(item.forumId)">
             <img src="../interact/img/信息.png" alt=""><span>回复</span>
           </div>
         </li>
@@ -42,13 +49,9 @@
           _this.commentList = res.data.rows
         })
       },
-      forumDetail (id) {
-        this.$http.getForumDetail({forum_id: id}).then(function () {
-        })
-      },
-      response (id, comment) {
+      response (id) {
+        localStorage.setItem('id', id)
         this.$router.push('./addComment')
-        this.$http.addComment({forum_id: id, comment: comment}).then(function () {})
       }
     }
 

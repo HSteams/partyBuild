@@ -31,7 +31,7 @@ export default {
   judgeIsComment: `${base}/nationComment/isComment.do`,
   getPersonalSummary: `${base}/nationComment/userSummary.do`,
   uploadComment: `${base}/nationComment/userSummary.do`,
-   // 帖子信息
+  // 帖子信息
   getForumList: `${base}/forum/forumList.do`,
   getForumDetail: `${base}/forum/forumDetail.do`,
   addComment: `${base}/forum/addComment.do`,

@@ -1,16 +1,20 @@
 <template>
   <div>
-  <head-nav title="两学一做讨论区">
-  </head-nav>
-  <commonList>
-  </commonList>
+    <commonList>
+    </commonList>
   </div>
 </template>
 <script>
   import commonList from './commonList.vue'
-  import HeadNav from '../common/headNav/HeadNav.vue'
   export default {
-    components: {commonList, HeadNav}
+    data () {
+      return {
+        header: {
+          title: '两学一做讨论区'
+        }
+      }
+    },
+    components: {commonList}
   }
 </script>
 <style>

@@ -46,8 +46,7 @@
   }
 
   .mutiple_select .item img{
-    width: 100%;
-    margin-bottom: 5px;
+   margin-bottom: 5px;
     height: 39px;
     width: 39px;
   }

@@ -36,14 +36,26 @@ export default [
   {path: '/Summary/:title', name: 'Summary', component: cmp('/palm/Summary')},
   {path: '/ThoughtReports/:title', name: 'ThoughtReports', component: cmp('/palm/ThoughtReports')},
 
-  { path: '/UploadPersonalSummary', name: 'UploadPersonalSummary', component: cmp('/palm/comment/UploadPersonalSummary') },
-  { path: '/NationComment', name: 'NationComment', component: cmp('/palm/comment/NationComment') },
+  {
+    path: '/UploadPersonalSummary',
+    name: 'UploadPersonalSummary',
+    component: cmp('/palm/comment/UploadPersonalSummary')
+  },
+
+  {path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment')},
+
+  {path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization')},
+
+  {path: '/NationComment', name: 'NationComment', component: cmp('/palm/comment/NationComment')},
+
   {path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment')},
   {path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization')},
   {path: '/password', name: 'password', component: cmp('/my/password')},
   {path: '/integration', name: 'integration', component: cmp('/my/integration')},
   {path: '/message', name: 'message', component: cmp('/interact/message')},
   {path: '/MemberInteract', name: 'MemberInteract', component: cmp('/interact/MemberInteract')},
-  {path: '/comments', name: 'comments', component: cmp('/pictureLink/comments')}
+  {path: '/comments', name: 'comments', component: cmp('/pictureLink/comments')},
+  {path: '/forumSave', name: 'forumSave', component: cmp('/forum/forumSave')},
+  {path: '/forumAdd/:id', name: 'forumAdd', component: cmp('/forum/forumAdd')}
 
 ]

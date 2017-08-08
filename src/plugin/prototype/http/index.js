@@ -70,7 +70,6 @@ export default {
   uploadComment  (param) {
     return axios.get(config.uploadComment, param)
   },
-//  用户
   getMemberList (param) {
     return axios.post(config.getForumList, qs.stringify(param))
   },
