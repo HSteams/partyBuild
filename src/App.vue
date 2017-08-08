@@ -24,11 +24,11 @@
 <style lang="less">
   @import "./assets/style/public";
   #app {
+    /*height: 100%;*/
+
     .app_router_view{
       position: absolute;
       transition: all 0.5s;
-      height: 100%;
-      width: 100%;
     }
     .slide-left-enter, .slide-right-leave-to {
       transform: translate(100%, 0);
@@ -38,8 +38,8 @@
       transform: translate(-100%, 0);
     }
 
-    /*.fade-enter {*/
-      /*opacity: 0;*/
-    /*}*/
+    .fade-enter {
+      opacity: 0;
+    }
   }
 </style>

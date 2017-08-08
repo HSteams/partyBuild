@@ -1,14 +1,12 @@
 <!--Created by fjl on 2017/8/1-->
 <!--底部选项卡-->
 <template>
-  <div>
-    <mt-tabbar class="tabbar" fixed>
+    <mt-tabbar fixed class="tabbar">
       <mt-tab-item @click.native.prevent="clickItem(index)" :class="{'tabbar_item':true,'actived':selected == index}" v-for="(item,index) in tabItems" :id="index">
         <img slot="icon" :src="selected == index?item.selected_pic:item.normal_pic">
         {{item.title}}
       </mt-tab-item>
     </mt-tabbar>
-  </div>
 </template>
 
 <script>
@@ -34,6 +32,7 @@
 <style lang="less">
   @import "../../../assets/style/var";
   .tabbar{
+    position: fixed;
     height: @footer-height;
     .tabbar_item{
       padding: 4px;

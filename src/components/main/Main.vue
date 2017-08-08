@@ -15,7 +15,7 @@
       <keep-alive><router-view></router-view></keep-alive>
     </main>
 
-    <tab-bar @clickItem="clickTabItem" :tabItems="tabItems" :selected="selected"></tab-bar>
+    <tab-bar class="footer" @clickItem="clickTabItem" :tabItems="tabItems" :selected="selected"></tab-bar>
 
   </div>
 </template>
@@ -85,14 +85,6 @@
 
 <style lang="less" scoped>
   .Main{
-    position: relative;
-    .header_nav #login_btn{
-      color: white;
-    }
 
-    .header_nav .party_logo{
-      width: 130px;
-      vertical-align: middle;
-    }
   }
 </style>
