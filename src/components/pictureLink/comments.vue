@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="comment">
     <commonList>
     </commonList>
   </div>

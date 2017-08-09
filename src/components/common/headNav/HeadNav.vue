@@ -19,9 +19,7 @@
           <span v-if="item.text" v-text="item.text"></span>
         </mt-button>
       </div>
-
-
-    </mt-header>
+   </mt-header>
   </div>
 </template>
 
@@ -43,7 +41,6 @@
 
       },
       clickRightBtn () {
-
       },
       back () {
 //        if (this.$router.pathHistory.length <= 1) {

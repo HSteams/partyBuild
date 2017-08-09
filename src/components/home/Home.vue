@@ -8,9 +8,10 @@
     <!--多列布局-->
     <much-col-layout :data="muchColData" @clickItem="goMuchColContent"></much-col-layout>
     <img class="img3" src="../../assets/img/homePage/banner01.png" alt="">
-    <div class="div2">
-      <a href=""></a><a href=""></a> <a href=""></a><a href="#/comments"></a><a href=""></a>
-    </div>
+      <div class="div2">
+       <pictureCol :message="pictures" @clickItem="goMuchCols"></pictureCol>
+        <!--<a @click="a1"></a><a @click="a2"></a> <a @click="a3"></a><a @click="a4"></a><a @click="a5"></a>-->
+      </div>
   </div>
   <!--<head-nav>
 
@@ -18,12 +19,14 @@
 </template>
 
 <script>
+  import pictureCol from '../common/muchColLayout/pictureCol.vue'
+  import pictures from '../../appConfig/picture'
   import muchColData from '../../appConfig/homeMuchSelect'
   import ViwePager from '../common/viwePager/ViwePager'
   import MuchColLayout from '../common/muchColLayout/MuchColLayout'
   export default{
     name: 'home',
-    components: { ViwePager, MuchColLayout },
+    components: {ViwePager, MuchColLayout, pictureCol},
     data () {
       return {
         header: {
@@ -32,22 +35,27 @@
         },
         newsType: 0,
         swipeData: null,
-        muchColData: muchColData
+        muchColData: muchColData,
+        pictures: pictures
       }
     },
     methods: {
       clickRightBtn () {
         this.$router.push('/Login')
       },
-
+      a4 () {
+        this.$router.push('/comments')
+      },
       // 进入轮播图详情页
       goViwePagerDetail (newsId) {
-        this.$router.push({ name: 'NewsDetail', params: {title: '轮播图详情', type: this.newsType, id: newsId} })
+        this.$router.push({name: 'NewsDetail', params: {title: '轮播图详情', type: this.newsType, id: newsId}})
       },
-
       // 请求轮播图片// 进入多列布局内容
       goMuchColContent (index) {
         this.$router.push(muchColData[index].path)
+      },
+      goMuchCols (index) {
+        this.$router.push(pictures[index].path)
       },
       reqSwipe () {
         var param = {
@@ -67,17 +75,14 @@
     }
   }
 </script>
-
-<<<<<<< HEAD
-
 <style scoped lang="less">
-.logo{
-  position: fixed;
-  left: 4.5px;
-  top: 4.5px;
-  height: 35px;
-  z-index: 10;
-}
+  .logo {
+    position: fixed;
+    left: 4.5px;
+    top: 4.5px;
+    height: 35px;
+    z-index: 10;
+  }
 
   .div2 {
 
@@ -86,17 +91,18 @@
     height: 180px;
     margin-top: -4.7px;
     background-size: 100% 180px;
-    a{
+    a {
       width: 33.33%;
-      height:50%;
+      height: 50%;
       float: left;
     }
-    a:nth-child(1){
-      height:100%;
+    a:nth-child(1) {
+      height: 100%;
     }
   }
- .img3{
-   width:100%;
- }
+
+  .img3 {
+    width: 100%;
+  }
 </style>
 

@@ -22,6 +22,7 @@
         <span>修改密码</span>
         <img src="../../assets/img/myParty/大于号.png" alt="">
       </div>
+      <button @click="logout" class="btn2">退出登录</button>
     </div>
   </div>
 </template>
@@ -37,9 +38,7 @@
           hiddenBack: true,
           backColor: 'rgba(0,0,0,0)'
         },
-
         img1: img
-
       }
     },
     methods: {
@@ -61,7 +60,8 @@
 
 <style lang="less" scoped>
   @import "../../assets/style/var";
-  .header{
+
+  .header {
     background-color: transparent;
     height: @header-height;
     font-size: @header-fontsize;
@@ -103,5 +103,18 @@
     float: right;
     padding-top: 22px;
     padding-right: 15px;
+  }
+
+  .btn2 {
+    width: 80%;
+    margin-left: 10%;
+    height: 36px;
+    background-color: #c7010b;
+    border: 0;
+    position: fixed;
+    top: 65%;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
   }
 </style>
