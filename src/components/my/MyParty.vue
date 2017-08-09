@@ -38,10 +38,25 @@
           hiddenBack: true,
           backColor: 'rgba(0,0,0,0)'
         },
-        img1: img
+        img1: img,
+        personData: []
+      }
+    },
+    created () {
+      this.getData()
+      if (this.personData.header) {
+        this.img1 = this.personData.header
       }
     },
     methods: {
+      getData () {
+        var _this = this
+        this.$http.getUserInfo().then(function (res) {
+          console.log(res.data.data)
+          _this.personData = res.data.data
+          console.log(_this.personData)
+        })
+      },
       logout () {
         this.$store.commit('logout')
       },
@@ -111,9 +126,8 @@
     height: 36px;
     background-color: #c7010b;
     border: 0;
-    position: fixed;
-    top: 65%;
     border-radius: 10px;
+    margin-top: 20px;
     color: white;
     font-size: 18px;
   }

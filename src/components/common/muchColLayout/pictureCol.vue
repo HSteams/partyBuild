@@ -7,7 +7,10 @@
 <script>
 export default{
   props: ['message'],
-  data () {},
+  name: 'picture-col',
+  data () {
+    return {}
+  },
   methods: {
     clickItem (index) {
       this.$emit('clickItem', index)
@@ -18,7 +21,7 @@ export default{
 <style lang="less">
   .item{
     width:33.33%;
-    height:90px;
+    height:50%;
     float:left
   }
 </style>
