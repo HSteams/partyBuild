@@ -1,11 +1,6 @@
 <template>
   <div>
-   <!-- <mt-header >
-      <router-link to="/MyParty" slot="left">
-        <mt-button icon="back" class="back_btn"></mt-button>
-      </router-link>
-      <mt-button slot="right" @click="getType">{{type == true ? '编辑' : '保存'}}</mt-button>
-    </mt-header>-->
+
     <form  name="form1" class="has-header">
      <div style="height: 41px">
        <img :src="personData.header" alt="" style="width: 30px;height:30px;padding-right: 100px;vertical-align: middle"></div>
