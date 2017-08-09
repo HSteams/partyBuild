@@ -4,8 +4,8 @@
   <div class="much-col-layout">
     <ul class="mutiple_select">
       <li v-for="(item,index) in data" @click="clickItem(index)" class="item">
-        <img :src="item.pic">
-        <div v-text="item.title"></div>
+        <img :src="item.pic" id="img">
+        <div v-text="item.title" id="div"></div>
       </li>
     </ul>
   </div>
@@ -14,6 +14,19 @@
   export default {
     props: ['data'],
     name: 'much-col-layout',
+    data () {
+      return {
+        data1: ['data']
+      }
+    },
+   /* created () {
+      if (this.data1 === pictures) {
+        var img1 = document.getElementById('img')
+        img1.style.display = 'none'
+        var div = document.getElementById('div')
+        div.style.display = 'none'
+      }
+    }, */
     methods: {
       clickItem (index) {
         this.$emit('clickItem', index)
@@ -25,13 +38,13 @@
 
 <style lang="less" scoped>
 
-  .mutiple_select:after{
+  .mutiple_select:after {
     content: '';
     display: table;
-    clear:both;
+    clear: both;
   }
 
-  .mutiple_select .item{
+  .mutiple_select .item {
     float: left;
     width: 33.33%;
     text-align: center;
@@ -42,8 +55,8 @@
 
   }
 
-  .mutiple_select .item img{
-   margin-bottom: 5px;
+  .mutiple_select .item img {
+    margin-bottom: 5px;
     height: 39px;
     width: 39px;
   }

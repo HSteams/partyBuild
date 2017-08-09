@@ -5,7 +5,7 @@
       <input type="text" placeholder="输入旧密码" v-model="rule.oldPwd">
       <P> 新密码：</P>
       <input type="text" placeholder="输入新密码" v-model="rule.newPwd">
-      <input type="text" placeholder="再次输入新密码" v-model="rule.newPwd">
+      <input type="text" placeholder="再次输入新密码" v-model="rule.newPwds">
     </form>
     <button @click="getData" class="btn">提交</button>
   </div>
@@ -20,10 +20,14 @@
         rule: {
           oldPwd: '',
           newPwd: ''
-        }
+        },
+        newPwds: ''
       }
     },
     created () {
+    /*  if (this.rule.newPwd !== this.newPwds) {
+        this.newPwd = ''
+      } */
     },
     methods: {
       getData () {
@@ -62,7 +66,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 55%;
+    top: 100%;
 
     margin: auto;
     font-size: 16px;

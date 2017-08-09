@@ -8,7 +8,6 @@ var mcPic3 = require('../assets/img/homePage/icon_03.png')
 var mcPic4 = require('../assets/img/homePage/icon_04.png')
 var mcPic5 = require('../assets/img/homePage/icon_05.png')
 var mcPic6 = require('../assets/img/homePage/icon_06.png')
-
 export default [
   {
     title: '信工新闻眼',
