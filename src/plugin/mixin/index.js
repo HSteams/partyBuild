@@ -7,13 +7,18 @@ export default function (Vue) {
     },
     // vue 自带页面激活钩子
     activated () {
-      console.log(this.$router.pathHistory.top.top)
+      var apps = document.getElementsByClassName('app_router_view')
+      // 设置滚动位置
+      if (apps.length > 1) {
+        apps[1].scrollTop = this.$router.pathHistory.top.top
+        console.log(this.$router.pathHistory.top.top)
+      }
+
       if (!this.$router.pathHistory.isBack) {
         // 调用自定义的页面激活方法
         this.activated()
       }
-      // 设置滚动位置
-      document.body.scrollTop = this.$router.pathHistory.top.top
+
       // 中间路由，不设置头部导航
       if (this.isMiddlePage) {
         return
