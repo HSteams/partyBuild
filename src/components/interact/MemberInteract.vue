@@ -11,8 +11,8 @@
           <ul v-for="item in commentList">
           <li class="lig"><img :src="item.header" alt="" class="img1"></li>
            <li class="li1"><button class="btn1">党员互动</button><span>{{ item.username}}</span>
-             <div> <img src="./img/时间.png" alt=""> <span>{{item.currentTime}}</span>
-             <img src="./img/声音.png" alt=""><span>公开</span></div>
+             <div> <img src="./img/time.png" alt=""> <span>{{item.currentTime}}</span>
+             <img src="./img/voice.png" alt=""><span>公开</span></div>
 
               </li>
             <li class="li3"><span>{{item.content}}</span></li>
@@ -20,7 +20,7 @@
         </ul>
 
       </mt-loadmore>
-      <div class="imgFix" @click="save"><img src="./img/发布btn.png" alt="" style="width: 60px;height: 60px;"></div>
+      <div class="imgFix" @click="save"><img src="./img/btn.png" alt="" style="width: 60px;height: 60px;"></div>
     </div>
 
   </div>

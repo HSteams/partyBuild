@@ -35,5 +35,6 @@ export default {
   getForumList: `${base}/forum/forumList.do`,
   getForumDetail: `${base}/forum/forumDetail.do`,
   addComment: `${base}/forum/addComment.do`,
-  saveForum: `${base}/forum/saveForum.do`
+  saveForum: `${base}/forum/saveForum.do`,
+  integralList: `${base}/integral/integralL`
 }
