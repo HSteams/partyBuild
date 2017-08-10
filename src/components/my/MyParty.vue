@@ -43,9 +43,6 @@
         personData: ''
       }
     },
-    activated () {
-      console.log(this.header)
-    },
     mounted () {
       this.getData()
     },
@@ -54,7 +51,6 @@
         var _this = this
         this.$http.getUserInfo().then(function (res) {
           _this.personData = res.data.data.header
-          console.log(res.data.data.header)
         })
       },
       logout () {
