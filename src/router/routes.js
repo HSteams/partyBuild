@@ -15,15 +15,13 @@ export default [
     component: cmp('/main/Main'),
     children: [
       {path: '', redirect: '/Home'},
-      {path: 'Home', name: 'Home', component: cmp('/home/Home'), meta: {hasTabbar: true}},
+      {path: 'Home', name: 'Home', component: cmp('/home/Home'), meta: {hasTabbar: true, top: 0}},
 
-      {path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, hasTabbar: true}},
+      {path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, hasTabbar: true, top: 0}},
 
-      {path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, hasTabbar: true}}
+      {path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, hasTabbar: true, top: 0}}
     ]
   },
-
-  {path: '/MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, isTabItem: true}},
 
   {path: '/Login', name: 'Login', component: cmp('/user/Login')},
 

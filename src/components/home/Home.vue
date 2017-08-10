@@ -31,7 +31,7 @@
       return {
         header: {
           hiddenBack: true,
-          rightBtns: []
+          title: ''
         },
         newsType: 0,
         swipeData: null,
@@ -40,8 +40,7 @@
       }
     },
     activated () {
-      this.header.rightBtns =
-        this.$store.getters.token ? '' : [{text: '登录'}]
+      this.header.rightBtns = this.$store.getters.token ? [] : [{text: '登录'}]
     },
     methods: {
       clickRightBtn () {
@@ -75,8 +74,6 @@
       }
     },
     created () {
-      this.header.rightBtns =
-        this.$store.getters.token ? '' : [{text: '登录'}]
       this.reqSwipe()
     }
   }

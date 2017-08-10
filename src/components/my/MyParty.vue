@@ -37,12 +37,14 @@
       return {
         header: {
           title: '我的党建',
-          hiddenBack: true,
-          backColor: 'rgba(0,0,0,0)'
+          hiddenBack: true
         },
         img1: img,
         personData: []
       }
+    },
+    activated () {
+      console.log(this.header)
     },
     created () {
       this.getData()
@@ -54,9 +56,7 @@
       getData () {
         var _this = this
         this.$http.getUserInfo().then(function (res) {
-          console.log(res.data.data)
           _this.personData = res.data.data
-          console.log(_this.personData)
         })
       },
       logout () {
