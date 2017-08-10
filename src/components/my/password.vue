@@ -25,12 +25,12 @@
       }
     },
     created () {
-    /*  if (this.rule.newPwd !== this.newPwds) {
-        this.newPwd = ''
-      } */
     },
     methods: {
       getData () {
+        if (this.rule.newPwd !== this.newPwds) {
+          this.newPwd = ''
+        }
         this.$http.changePwd(this.rule).then(function (res) {
           console.log(res)
         })

@@ -21,7 +21,7 @@ export default{
 <style lang="less">
   .item{
     width:33.33%;
-    height:50%;
+    height:90px;
     float:left
   }
 </style>
