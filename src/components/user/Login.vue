@@ -55,7 +55,7 @@
           _this.$store.commit('login', {token: data.token, user: data.data})
 
           // 根据状态跳转登录后的页面
-          var toPath = _this.$route.query.toPath
+          var toPath = _this.$route.query.path
           if (toPath) {
             _this.$router.push(toPath)
           } else {
