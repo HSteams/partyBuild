@@ -11,7 +11,6 @@ export default function (Vue) {
       // 设置滚动位置
       if (apps.length > 1) {
         apps[1].scrollTop = this.$router.pathHistory.top.top
-        console.log(this.$router.pathHistory.top.top)
       }
 
       if (!this.$router.pathHistory.isBack) {

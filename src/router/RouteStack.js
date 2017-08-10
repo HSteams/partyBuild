@@ -31,7 +31,6 @@ export default class RouteStack extends Stack {
       this.top.top = obj.top
     }
     this.push({path: obj.path, top: 0})
-    console.log(this)
     this.isBack = false
   }
   // 替换栈顶元素
