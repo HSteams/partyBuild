@@ -7,7 +7,9 @@
 <script>
 export default{
   props: ['message'],
-  data () {},
+  data () {
+    return {}
+  },
   methods: {
     clickItem (index) {
       this.$emit('clickItem', index)

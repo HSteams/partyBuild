@@ -19,14 +19,14 @@
         data1: ['data']
       }
     },
-   /* created () {
-      if (this.data1 === pictures) {
-        var img1 = document.getElementById('img')
-        img1.style.display = 'none'
-        var div = document.getElementById('div')
-        div.style.display = 'none'
-      }
-    }, */
+    /* created () {
+     if (this.data1 === pictures) {
+     var img1 = document.getElementById('img')
+     img1.style.display = 'none'
+     var div = document.getElementById('div')
+     div.style.display = 'none'
+     }
+     }, */
     methods: {
       clickItem (index) {
         this.$emit('clickItem', index)

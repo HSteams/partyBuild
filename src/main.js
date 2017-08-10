@@ -11,6 +11,7 @@ Vue.config.productionTip = false
 Vue.use(plugin)
 Vue.use(MINT)
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,

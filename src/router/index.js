@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import routes from './routes'
 import RouteStack from './RouteStack'
+import store from '../store'
 Vue.use(Router)
 // 定制路由历史记录，栈的深度为20
 Router.prototype.pathHistory = new RouteStack(20)
@@ -22,8 +23,17 @@ router.beforeEach(function (to, from, next) {
     // 根据路由历史记录出栈还是入栈
     Router.prototype.pathHistory.pushOrPop(obj)
   }
-
-  next()
+  if (to.meta.auth) {
+    if (store.getters.token && to.params === '/Login') {
+      next()
+    } else if (!store.getters.token) {
+      next({
+        path: '/Login'
+      })
+    }
+  } else {
+    next()
+  }
 })
 
 export default router
