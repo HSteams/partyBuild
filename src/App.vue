@@ -7,11 +7,13 @@
     <!--主体，程序入口-->
     <transition :name="$router.pathHistory.isBack?'slide-right':'slide-left'">
       <keep-alive>
-        <router-view id="app_router_view" :class="{'app_router_view':true,'slide':true}"></router-view>
+        <router-view id="app_router_view" class="app_router_view slide"></router-view>
     </keep-alive>
     </transition>
     <footer id="footer">
-      <my-tab-bar v-show="$router.currentRoute.meta.hasTabbar"></my-tab-bar>
+      <transition :name="$router.pathHistory.isBack?'slide-right':'slide-left'">
+      <my-tab-bar v-show="$router.currentRoute.meta.hasTabbar" class="slide"></my-tab-bar>
+      </transition>
     </footer>
   </div>
 </template>
@@ -36,6 +38,11 @@
       bottom: 0;
       margin: auto;
       overflow: auto;
+    }
+    // 隐藏滚动条
+    .app_router_view::-webkit-scrollbar{
+      width: 0;
+      height: 0;
     }
     .slide{
       transition: all 0.5s;

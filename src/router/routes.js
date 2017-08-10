@@ -14,16 +14,14 @@ export default [
     name: 'main',
     component: cmp('/main/Main'),
     children: [
-      { path: '', redirect: '/Home' },
-      { path: 'Home', name: 'Home', component: cmp('/home/Home'), meta: {hasTabbar: true} },
+      {path: '', redirect: '/Home'},
+      {path: 'Home', name: 'Home', component: cmp('/home/Home'), meta: {hasTabbar: true, top: 0}},
 
-      { path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, hasTabbar: true} },
+      {path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, hasTabbar: true, top: 0}},
 
-      { path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, hasTabbar: true} }
+      {path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, hasTabbar: true, top: 0}}
     ]
   },
-
-  {path: '/MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, isTabItem: true}},
 
   {path: '/Login', name: 'Login', component: cmp('/user/Login')},
 
@@ -33,9 +31,19 @@ export default [
 
   {path: '/PalmOrganization/:title', name: 'PalmOrganization', component: cmp('/palm/PalmOrganization')},
 
-  {path: '/MemberInteract/:title', name: 'MemberInteract', component: cmp('/interact/MemberInteract')},
-  {path: '/Summary/:title', name: 'Summary', component: cmp('/palm/Summary')},
-  {path: '/ThoughtReports/:title', name: 'ThoughtReports', component: cmp('/palm/ThoughtReports')},
+  {
+    path: '/MemberInteract/:title',
+    name: 'MemberInteract',
+    component: cmp('/interact/MemberInteract'),
+    meta: {auth: true}
+  },
+  {path: '/Summary/:title', name: 'Summary', component: cmp('/palm/Summary'), meta: {auth: true}},
+  {
+    path: '/ThoughtReports/:title',
+    name: 'ThoughtReports',
+    component: cmp('/palm/ThoughtReports'),
+    meta: {auth: true}
+  },
 
   {
     path: '/UploadPersonalSummary',
@@ -43,7 +51,7 @@ export default [
     component: cmp('/palm/comment/UploadPersonalSummary')
   },
 
-  {path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment')},
+  {path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment'), meta: {auth: true}},
 
   {path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization')},
 

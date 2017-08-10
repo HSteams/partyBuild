@@ -41,7 +41,6 @@
         var _this = this
         this.$http.getNewsList(param).then(function (res) {
           var data = res.data
-          console.log(data)
           _this.newsDatas = data.rows
         }).catch(function (err) {
           console.error(err)

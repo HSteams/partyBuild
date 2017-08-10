@@ -22,6 +22,8 @@
         <span>修改密码</span>
         <img src="../../assets/img/myParty/大于号.png" alt="">
       </div>
+    </div>
+    <div class="align-center">
       <button @click="logout" class="btn2">退出登录</button>
     </div>
   </div>
@@ -35,12 +37,14 @@
       return {
         header: {
           title: '我的党建',
-          hiddenBack: true,
-          backColor: 'rgba(0,0,0,0)'
+          hiddenBack: true
         },
         img1: '',
         personData: []
       }
+    },
+    activated () {
+      console.log(this.header)
     },
     created () {
       this.getData()
@@ -54,9 +58,7 @@
       getData () {
         var _this = this
         this.$http.getUserInfo().then(function (res) {
-          console.log(res.data.data)
           _this.personData = res.data.data
-          console.log(_this.personData)
         })
       },
       logout () {
@@ -122,16 +124,19 @@
     padding-top: 22px;
     padding-right: 15px;
   }
-
-  .btn2 {
-    width: 80%;
-    margin-left: 10%;
-    height: 36px;
-    background-color: #c7010b;
-    border: 0;
-    border-radius: 10px;
-    margin-top: 20px;
-    color: white;
-    font-size: 18px;
+  .align-center{
+    text-align: center;
+    .btn2 {
+      width: 80%;
+      margin-top: 80px;
+      height: 36px;
+      background-color: #c7010b;
+      border: 0;
+      top: 65%;
+      border-radius: 10px;
+      color: white;
+      font-size: 18px;
+    }
   }
+
 </style>
