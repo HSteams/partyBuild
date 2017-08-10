@@ -3,8 +3,9 @@
 <template>
   <div class="has-footer">
     <div class="div2">
-      <img :src="img1" alt="">
-      <div>马上登录，获取更多党建咨询</div>
+     <img :src='personData' alt="" v-if="personData">
+      <img :src="img1" alt="" v-if="!personData">
+      <div id="div1"></div>
     </div>
     <div class="div1">
       <div @click="message">
@@ -28,10 +29,9 @@
     </div>
   </div>
 </template>
-
 <script>
+  import {MessageBox} from 'mint-ui'
   import img from '../../assets/img/myParty/headIcon@2x.png'
-
   export default {
     data () {
       return {
@@ -40,27 +40,25 @@
           hiddenBack: true
         },
         img1: img,
-        personData: []
+        personData: ''
       }
     },
-    activated () {
-      console.log(this.header)
-    },
-    created () {
+    mounted () {
       this.getData()
-      if (this.personData.header) {
-        this.img1 = this.personData.header
-      }
     },
     methods: {
       getData () {
         var _this = this
         this.$http.getUserInfo().then(function (res) {
-          _this.personData = res.data.data
+          _this.personData = res.data.data.header
         })
       },
       logout () {
-        this.$store.commit('logout')
+        MessageBox.confirm('确定执行此操作').then(action => {
+          this.$store.commit('logout')
+          this.$router.push('/home')
+          document.getElementById('div1').innerHTML = '马上登录，获取更多党建咨询'
+        })
       },
       message () {
         this.$router.push('/message')
@@ -96,21 +94,24 @@
   .div2 img {
     width: 80px;
     height: 80px;
+    margin-top: 20px;
+
   }
 
   .div1 > div {
-    height: 60px;
+    height: 50px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
 
   .div1 > div > * {
     vertical-align: middle;
-    line-height: 60px;
+    line-height: 50px;
+    margin-left: 10px;
   }
 
   .div1 div img:nth-child(1) {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 
   .div1 div img:nth-child(3) {
@@ -118,10 +119,12 @@
     height: 16px;
     display: flex;
     float: right;
-    padding-top: 22px;
+    padding-top: 17px;
     padding-right: 15px;
+
   }
-  .align-center{
+
+  .align-center {
     text-align: center;
     .btn2 {
       width: 80%;

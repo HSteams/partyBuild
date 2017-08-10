@@ -7,12 +7,12 @@
         <li class="lig"><img :src="item.header" alt="" class="img1"></li>
         <li class="li1"><span>{{ item.username}}</span>
           <button class="btn1">两学一做</button>
-          <div><img src="../interact/img/信息.png" alt=""> <span>{{item.currentTime}}</span>
-            <img src="../interact/img/信息.png" alt=""><span>公开</span></div>
+          <div><img src="../interact/img/time.png" alt=""> <span>{{item.currentTime}}</span>
+            <img src="../interact/img/voice.png" alt=""><span>公开</span></div>
         <li class="li3">
           <span>{{item.content}}</span>
           <div class="huiFu" @click="response(item.forumId)">
-            <img src="../interact/img/信息.png" alt=""><span>回复</span>
+            <img src="../interact/img/message.png" alt=""><span>回复</span>
           </div>
         </li>
       </ul>
