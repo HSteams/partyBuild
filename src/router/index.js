@@ -15,18 +15,17 @@ const router = new Router({
 router.beforeEach(function (to, from, next) {
   // 获取App组件中的route-view
   var apps = document.getElementsByClassName('app_router_view')
-  console.log(apps[0])
+  // 记录滚动位置
   var obj = {
-    path: to.path,
     top: apps.length > 0 ? apps[0].scrollTop : 0
   }
-  if (from && from.matched[0] &&
-    from.matched[0].name === to.matched[0].name) { // from和to一级路由相同
-    Router.prototype.pathHistory.replace(obj)
-  } else { // from和to一级路由不相
-    // 根据路由历史记录出栈还是入栈
+  if (from.meta.hasTabbar) { // 是tabbar的内容
+    from.meta.top = obj.top
+  }
+  if (!from.meta.hasTabbar || !to.meta.hasTabbar) { // from和to存在一个不是tabbar的内容
     Router.prototype.pathHistory.pushOrPop(obj)
   }
+
   if (to.meta.auth && !store.getters.token) {
     next({
       path: '/Login'

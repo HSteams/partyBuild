@@ -2,19 +2,19 @@
 <!--头部组件-->
 <template>
   <div class="HeadNav">
-    <mt-header v-show="!hidden" fixed class="header_nav" :style="{'background-color':backColor || '#C7010B'}" :title="title">
+    <mt-header v-show="!header.hidden" fixed class="header_nav" :style="{'background-color':header.backColor || '#C7010B'}" :title="header.title">
       <div slot="left">
-        <mt-button class="back-btn" v-show="!hiddenBack"  @click="back">
+        <mt-button class="back-btn" v-show="!header.hiddenBack"  @click="back">
           <img src="./back.png" alt="">
         </mt-button>
-        <mt-button class="btn"  v-for="(item,index) in leftBtns"  @click="clickLeftBtn(index)">
+        <mt-button class="btn"  v-for="(item,index) in header.leftBtns"  @click="clickLeftBtn(index)">
           <img v-if="item.pic" :src="item.pic" alt="">
           <span v-if="item.text" v-text="item.text"></span>
         </mt-button>
       </div>
 
       <div slot="right">
-        <mt-button class="btn" v-for="(item,index) in rightBtns"  @click="clickRightBtn(index)">
+        <mt-button class="btn" v-for="(item,index) in header.rightBtns"  @click="clickRightBtn(index)">
           <img v-if="item.pic" :src="item.pic" alt="">
           <span v-if="item.text" v-text="item.text"></span>
         </mt-button>
@@ -27,12 +27,14 @@
   export default {
     data () {
       return {
-        title: '',
-        hiddenBack: true,
-        hidden: false,
-        backColor: '#C7010B',
-        leftBtns: [],
-        rightBtns: []
+        header: {
+          title: '',
+          hiddenBack: true,
+          hidden: false,
+          backColor: '#C7010B',
+          leftBtns: [],
+          rightBtns: []
+        }
       }
     },
     name: 'head-nav',
@@ -43,9 +45,7 @@
       clickRightBtn () {
       },
       back () {
-//        if (this.$router.pathHistory.length <= 1) {
-//          return
-//        }
+        this.$router.pathHistory.clickBack = true
         this.$router.back()
       }
     }

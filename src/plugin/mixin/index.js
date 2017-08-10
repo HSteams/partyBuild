@@ -8,9 +8,16 @@ export default function (Vue) {
     // vue 自带页面激活钩子
     activated () {
       var apps = document.getElementsByClassName('app_router_view')
-      // 设置滚动位置
-      if (apps.length > 1) {
-        apps[1].scrollTop = this.$router.pathHistory.top.top
+
+      if (this.$router.currentRoute.meta.hasTabbar) { // 是tabbar的内容
+        if (apps.length > 0) {
+          apps[apps.length - 1].scrollTop = this.$router.currentRoute.meta.top
+        }
+      } else {
+        if (apps.length > 1) {
+          // 设置滚动位置
+          apps[1].scrollTop = this.$router.pathHistory.top.top
+        }
       }
 
       if (!this.$router.pathHistory.isBack) {
@@ -28,30 +35,12 @@ export default function (Vue) {
       // 公共头部导航
       var headNav = app.$refs.headNav
       if (this.header) {
-        headNav.title = this.header.title || this.$route.params.title || ''
-        headNav.hiddenBack = this.header.hiddenBack
-        headNav.hidden = this.header.hidden
-        headNav.leftBtns = this.header.leftBtns
-        headNav.rightBtns = this.header.rightBtns
-        headNav.backColor = this.header.backColor
-
-        headNav.clickLeftBtn = this.clickLeftBtn
-        headNav.clickRightBtn = this.clickRightBtn
+        headNav.header = this.header
       } else if (this.$route.params.title) {
-        headNav.title = this.$route.params.title || ''
-        headNav.hiddenBack = false
-        headNav.hidden = false
-        headNav.leftBtns = []
-        headNav.rightBtns = []
-        headNav.clickLeftBtn = null
-        headNav.clickRightBtn = null
+        headNav.header = { title: this.$route.params.title || '' }
       }
-
-      if (this.$router.currentRoute.meta.isTabItem) {
-        app.showTabbar = true
-      } else {
-        app.showTabbar = false
-      }
+      headNav.clickLeftBtn = this.clickLeftBtn
+      headNav.clickRightBtn = this.clickRightBtn
     }
   })
 }
