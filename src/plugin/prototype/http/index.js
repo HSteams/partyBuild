@@ -90,6 +90,8 @@ export default {
   },
   saveForum (param) {
     return axios.post(config.saveForum, qs.stringify(param))
+  },
+  integralList (param) {
+    return axios.post(config.integralList, qs.stringify(param))
   }
-
 }

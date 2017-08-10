@@ -58,5 +58,4 @@ export default [
   {path: '/comments', name: 'comments', component: cmp('/pictureLink/comments')},
   {path: '/forumSave', name: 'forumSave', component: cmp('/forum/forumSave')},
   {path: '/forumAdd', name: 'forumAdd', component: cmp('/forum/forumAdd')}
-
 ]

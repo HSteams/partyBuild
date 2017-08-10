@@ -1,7 +1,6 @@
 <template>
   <div>
-
-    <form  name="form1" class="has-header">
+   <form  name="form1" class="has-header">
      <div style="height: 41px">
        <img :src="personData.header" alt="" style="width: 30px;height:30px;padding-right: 100px;vertical-align: middle"></div>
       <div>头像</div>
@@ -117,10 +116,8 @@
   }
 
   button {
-
     font-size: 16px;
     color: white;
     font-weight: bold;
-
   }
 </style>

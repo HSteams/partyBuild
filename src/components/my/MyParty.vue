@@ -38,7 +38,7 @@
           hiddenBack: true,
           backColor: 'rgba(0,0,0,0)'
         },
-        img1: img,
+        img1: '',
         personData: []
       }
     },
@@ -46,6 +46,8 @@
       this.getData()
       if (this.personData.header) {
         this.img1 = this.personData.header
+      } else {
+        this.img1 = img
       }
     },
     methods: {
@@ -59,6 +61,7 @@
       },
       logout () {
         this.$store.commit('logout')
+        this.$router.push('/home')
       },
       message () {
         this.$router.push('/message')
