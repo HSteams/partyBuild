@@ -82,7 +82,7 @@
   .logo {
     position: fixed;
     left: 4.5px;
-    top: 4.5px;
+    top: 2.5px;
     height: 35px;
     z-index: 10;
   }
