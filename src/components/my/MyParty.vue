@@ -11,17 +11,17 @@
       <div @click="message">
         <img src="../../assets/img/myParty/info@2x.png" alt="">
         <span>个人信息</span>
-        <img src="../../assets/img/myParty/大于号.png" alt="">
+        <img src="../../assets/img/myParty/dayuhao.png" alt="">
       </div>
       <div @click="integration">
         <img src="../../assets/img/myParty/point@2x.png" alt="">
         <span>个人量化积分</span>
-        <img src="../../assets/img/myParty/大于号.png" alt="">
+        <img src="../../assets/img/myParty/dayuhao.png" alt="">
       </div>
       <div @click="password">
         <img src="../../assets/img/myParty/modifyPassword@2x.png" alt="">
         <span>修改密码</span>
-        <img src="../../assets/img/myParty/大于号.png" alt="">
+        <img src="../../assets/img/myParty/dayuhao.png" alt="">
       </div>
     </div>
     <div class="align-center">
@@ -60,7 +60,7 @@
           this.$store.commit('logout')
           this.$router.push('/home')
           document.getElementById('div1').innerHTML = '马上登录，获取更多党建咨询'
-        })
+        }).catch(action => {})
       },
       message () {
         this.$router.push('/message')
