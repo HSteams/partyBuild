@@ -25,14 +25,11 @@ router.beforeEach(function (to, from, next) {
     // 根据路由历史记录出栈还是入栈
     Router.prototype.pathHistory.pushOrPop(obj)
   }
-  if (to.meta.auth) {
-    if (store.getters.token && to.params === '/Login') {
-      next()
-    } else if (!store.getters.token) {
-      next({
-        path: '/Login'
-      })
-    }
+
+  if (to.meta.auth && !store.getters.token) {
+    next({
+      path: '/Login'
+    })
   } else {
     next()
   }

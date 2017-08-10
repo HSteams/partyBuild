@@ -61,6 +61,7 @@
       },
       logout () {
         this.$store.commit('logout')
+        this.$router.push('/Home')
       },
       message () {
         this.$router.push('/message')
