@@ -1,12 +1,13 @@
 <template>
   <div>
-   <form  name="form1" class="has-header">
-     <div style="height: 41px">
-       <img :src="personData.header" alt="" style="width: 30px;height:30px;padding-right: 100px;vertical-align: middle"></div>
+    <form name="form1" class="has-header">
+      <div style="height: 41px">
+        <img :src="personData.header" alt=""
+             style="width: 30px;height:30px;padding-right: 100px;vertical-align: middle"></div>
       <div>头像</div>
       <div><input type="text" :readonly='!isEdit' v-model='personData.age' class="ipt1"></div>
       <div>年龄</div>
-     <div><input type="text" v-model="personData.branchId" class="ipt1" :readonly='!isEdit'></div>
+      <div><input type="text" v-model="personData.branchId" class="ipt1" :readonly='!isEdit'></div>
       <div>身份证</div>
       <div><input type="text" v-model="personData.address" class="ipt1" :disabled='!isEdit'></div>
       <div>家庭住址</div>
@@ -29,6 +30,7 @@
   </div>
 </template>
 <script>
+  import {MessageBox} from 'mint-ui'
   export default {
     data () {
       return {
@@ -53,13 +55,14 @@
           console.log(_this.personData)
         })
       },
-     /* getType () {
-        var _this = this
-        this.type = !this.type
-        if (this.type === false) {
-          _this.ChangeInfo()
+      back () {
+        if (this.header.rightBtns[0].text === '保存') {
+          MessageBox.confirm('确定执行此操作').then(action => {
+            this.$router.pathHistory.clickBack = true
+            this.$router.back()
+          })
         }
-      }, */
+      },
       ChangeInfo () {
         var _this = this
         this.$http.changeUserInfo({age: this.personData.age}).then(function (res) {
@@ -73,7 +76,6 @@
         if (this.header.rightBtns[index].text === '保存') {
           this.header.rightBtns[index].text = '编辑'
           this.isEdit = false
-          this.ChangeInfo()
         } else {
           this.header.rightBtns[index].text = '保存'
           this.isEdit = true
@@ -98,9 +100,11 @@
     line-height: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
-   input {
-     border:0;
-   }
+
+  input {
+    border: 0;
+  }
+
   .back_btn {
     border: none;
     background-color: #C7010B;
