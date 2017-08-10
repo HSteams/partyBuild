@@ -7,6 +7,7 @@
 <script>
 export default{
   props: ['message'],
+  name: 'picture-col',
   data () {
     return {}
   },
@@ -20,7 +21,7 @@ export default{
 <style lang="less">
   .item{
     width:33.33%;
-    height:90px;
+    height:50%;
     float:left
   }
 </style>

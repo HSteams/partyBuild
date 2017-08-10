@@ -7,7 +7,7 @@
     <!--主体，程序入口-->
     <transition :name="$router.pathHistory.isBack?'slide-right':'slide-left'">
       <keep-alive>
-        <router-view :class="{'app_router_view':true,'slide':true}"></router-view>
+        <router-view id="app_router_view" :class="{'app_router_view':true,'slide':true}"></router-view>
     </keep-alive>
     </transition>
     <footer id="footer">
@@ -29,8 +29,13 @@
   @import "./assets/style/public";
   #app {
     .app_router_view{
-      width: 100%;
       position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      overflow: auto;
     }
     .slide{
       transition: all 0.5s;

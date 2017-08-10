@@ -40,10 +40,25 @@
           hiddenBack: true,
           backColor: 'rgba(0,0,0,0)'
         },
-        img1: img
+        img1: img,
+        personData: []
+      }
+    },
+    created () {
+      this.getData()
+      if (this.personData.header) {
+        this.img1 = this.personData.header
       }
     },
     methods: {
+      getData () {
+        var _this = this
+        this.$http.getUserInfo().then(function (res) {
+          console.log(res.data.data)
+          _this.personData = res.data.data
+          console.log(_this.personData)
+        })
+      },
       logout () {
         this.$store.commit('logout')
       },

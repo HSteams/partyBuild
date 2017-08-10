@@ -51,11 +51,8 @@
   .img2{
     margin-top: -3px;
     width:40px;
-    vertical-align: middle;
   }
   .img3{
-    width:20px;
-    margin-left: 90%;
-    vertical-align: middle;
+    width:100%;
   }
 </style>

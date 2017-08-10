@@ -12,9 +12,11 @@ const router = new Router({
 })
 
 router.beforeEach(function (to, from, next) {
+  var apps = document.getElementsByClassName('app_router_view')
+  console.log(apps[0])
   var obj = {
     path: to.path,
-    top: document.body.scrollTop || document.documentElement.scrollTop
+    top: apps.length > 0 ? apps[0].scrollTop : 0
   }
   if (from && from.matched[0] &&
     from.matched[0].name === to.matched[0].name) { // from和to一级路由相同
