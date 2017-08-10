@@ -9,7 +9,7 @@
     <much-col-layout :data="muchColData" @clickItem="goMuchColContent"></much-col-layout>
     <img class="img3" src="../../assets/img/homePage/banner01.png" alt="">
       <div class="div2">
-       <pictureCol :message="pictures" @clickItem="goMuchCols"></pictureCol>
+       <picture-col :message="pictures" @clickItem="goMuchCols"></picture-col>
         <!--<a @click="a1"></a><a @click="a2"></a> <a @click="a3"></a><a @click="a4"></a><a @click="a5"></a>-->
       </div>
   </div>
