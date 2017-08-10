@@ -58,7 +58,7 @@
           this.$store.commit('logout')
           this.$router.push('/home')
           document.getElementById('div1').innerHTML = '马上登录，获取更多党建咨询'
-        })
+        }).catch(action => {})
       },
       message () {
         this.$router.push('/message')
