@@ -3,7 +3,7 @@
     <form name="form1" class="has-header">
       <div style="height: 41px">
         <img :src="personData.header" alt=""
-             style="width: 30px;height:30px;padding-right: 100px;vertical-align: middle"></div>
+             style="width: 30px;height:30px;padding-right: 100px;vertical-align: middle;border: 0px;" ></div>
       <div>头像</div>
       <div><input type="text" :readonly='!isEdit' v-model='personData.age' class="ipt1"></div>
       <div>年龄</div>
@@ -13,8 +13,8 @@
       <div>家庭住址</div>
       <div><input type="text" v-model="personData.birthday" class="ipt1" :disabled='!isEdit'></div>
       <div>生日</div>
-      <div><input type="text" value="男" v-if="personData.sex" class="ipt1" :disabled='!isEdit'>
-        <input type="text" value="女" v-if="!personData.sex" class="ipt1" :disabled='!isEdit'></div>
+      <div><input type="text" value="男" v-if="personData.sex===1" class="ipt1" :disabled='!isEdit'>
+      <input type="text" value="女" v-if="personData.sex===0" class="ipt1" :disabled='!isEdit'></div>
       <div>性别  </div>
       <div><input type="text" class="ipt1" v-model="personData.education" :disabled='!isEdit'></div>
       <div>最高学历</div>
@@ -22,9 +22,9 @@
       <div>职称</div>
       <div><input type="text" v-model="personData.salary" class="ipt1" :disabled='!isEdit'></div>
       <div>薪资水平</div>
-      <div><input type="text" v-model="personData.joinPartyTime" :disabled='!isEdit'></div>
+      <div><input type="text" v-model="personData.joinPartyTime" :disabled='!isEdit' class="ipt1"></div>
       <div>入党时间</div>
-      <div><input type="text" v-model="personData.username" :disabled='!isEdit'></div>
+      <div><input type="text" v-model="personData.username" :disabled='!isEdit' class="ipt1"></div>
       <div>当前身份</div>
     </form>
   </div>
@@ -89,19 +89,23 @@
     }
   }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 
   form div:nth-child(2n-1) {
     float: right;
     line-height: 40px;
   }
-
+  form div:nth-child(2n-1):after{
+    content:'';
+    display: table;
+    clear: both;
+  }
   form div:nth-child(2n) {
     line-height: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 
-  input {
+  .ipt1 {
     border: 0;
   }
 
@@ -113,8 +117,9 @@
     text-align: left;
     padding: 0;
     img {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
+      border:0;
     }
 
   }

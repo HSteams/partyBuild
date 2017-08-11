@@ -65,7 +65,7 @@
     position: absolute;
     top:40px;
     width:100%;
-    z-index: 100;
+    z-index: 0;
   }
   input{
     font-size: 16px;
