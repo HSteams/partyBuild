@@ -7,14 +7,13 @@
     <viwe-pager :data="swipeData" @clickPic="goViwePagerDetail"></viwe-pager>
     <!--多列布局-->
     <much-col-layout :data="muchColData" @clickItem="goMuchColContent"></much-col-layout>
-    <img class="img3" src="../../assets/img/homePage/banner01.png" alt="">
+    <img class="img" src="../../assets/img/homePage/banner01.png" alt="">
       <div class="div2">
        <picture-col :message="pictures" @clickItem="goMuchCols"></picture-col>
         <!--<a @click="a1"></a><a @click="a2"></a> <a @click="a3"></a><a @click="a4"></a><a @click="a5"></a>-->
       </div>
   </div>
   <!--<head-nav>
-
   </head-nav>-->
 </template>
 
@@ -104,7 +103,7 @@
     }
   }
 
-  .img3 {
+  .img{
     width: 100%;
   }
 </style>

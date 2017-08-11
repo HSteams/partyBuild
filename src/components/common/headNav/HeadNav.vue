@@ -53,7 +53,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   @import "../../../assets/style/var";
   .HeadNav{
     /*头部导航设置*/

@@ -40,14 +40,14 @@
     },
     methods: {
       getData () {
-        this.$http.integralList({page: 2, rows: 10}).then(function (res) {
+        this.$http.integralList({page: 1, rows: 1}).then(function (res) {
           console.log(res)
         })
       }
     }
   }
 </script>
-<style lang="less">
+<style lang="less" scoped>
   .img1 {
     width: 100%;
     background-color: #c7010b;
@@ -56,10 +56,13 @@
   .jiFen {
     margin-top: -5px;
     div {
-      height: 50px;
+      height: 45px;
       width: 100%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-      line-height: 50px;
+      line-height: 45px;
+    }
+    >*{
+      margin-left: 10px;
     }
   }
 

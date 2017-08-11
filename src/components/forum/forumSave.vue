@@ -27,7 +27,7 @@
     }
   }
 </script>
-<style lang="less">
+<style lang="less" scoped>
  .has-header {
 padding-left: 5%;
  input{

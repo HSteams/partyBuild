@@ -1,11 +1,11 @@
 <template>
   <div>
-    <form action="">
+    <form action="" class="Form">
       <p style="padding-top: 15px">旧密码：</p>
-      <input type="text" placeholder="输入旧密码" v-model="rule.oldPwd">
+      <input type="text" placeholder="输入旧密码" v-model="rule.oldPwd" class="text">
       <P> 新密码：</P>
-      <input type="text" placeholder="输入新密码" v-model="rule.newPwd">
-      <input type="text" placeholder="再次输入新密码" v-model="newPwds">
+      <input type="text" placeholder="输入新密码" v-model="rule.newPwd" class="text">
+      <input type="text" placeholder="再次输入新密码" v-model="newPwds" class="text">
     </form>
     <button @click="getData" class="btn">提交</button>
   </div>
@@ -37,12 +37,12 @@
     }
   }
 </script>
-<style>
-  form {
+<style scoped>
+  .Form {
     margin-top: 40px;
   }
 
-  input {
+  .text {
     width: 90%;
     height: 40px;
     border: 2px solid rgba(1, 1, 1, 0.3);
