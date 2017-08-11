@@ -48,7 +48,7 @@
       back () {
         var self = this
         this.$router.pathHistory.clickBack = true
-        if (self.$route.query.fromPath) {
+        if (self.$route.query.from) {
           self.$router.go(-2)
         } else {
           self.$router.back()
