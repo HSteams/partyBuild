@@ -28,7 +28,11 @@ router.beforeEach(function (to, from, next) {
 
   if (to.meta.auth && !store.getters.token) {
     next({
-      path: '/Login'
+      path: '/Login',
+      query: {
+        toPath: to.path,
+        fromPath: from.path
+      }
     })
   } else {
     next()

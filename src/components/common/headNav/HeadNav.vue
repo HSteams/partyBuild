@@ -46,8 +46,13 @@
       clickRightBtn () {
       },
       back () {
+        var self = this
         this.$router.pathHistory.clickBack = true
-        this.$router.back()
+        if (self.$route.query.fromPath) {
+          self.$router.go(-2)
+        } else {
+          self.$router.back()
+        }
       }
     }
   }
@@ -55,32 +60,33 @@
 
 <style lang="less" scoped>
   @import "../../../assets/style/var";
-  .HeadNav{
+
+  .HeadNav {
     /*头部导航设置*/
-    .header_nav{
+    .header_nav {
       background: @header-backColor;
       font-size: 18px;
       font-weight: bold;
       height: @header-height;
-      .back-btn{
+      .back-btn {
         border: none;
         background-color: transparent;
         height: @header-height;
         width: 60px;
         text-align: left;
         padding: 0;
-        img{
+        img {
           width: 30px;
           height: 30px;
         }
       }
-      .btn{
+      .btn {
         border: none;
         min-width: 40px;
         height: 40px;
         background-color: transparent;
         padding: 0;
-        img{
+        img {
           height: 30px;
           vertical-align: middle;
         }

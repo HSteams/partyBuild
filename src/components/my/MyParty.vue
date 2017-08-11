@@ -54,6 +54,8 @@
         })
       },
       logout () {
+        this.$store.commit('logout')
+        this.$router.push('/Home')
         MessageBox.confirm('确定执行此操作').then(action => {
           this.$store.commit('logout')
           this.$router.push('/home')

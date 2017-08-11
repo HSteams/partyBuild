@@ -17,9 +17,9 @@ export default [
       {path: '', redirect: '/Home'},
       {path: 'Home', name: 'Home', component: cmp('/home/Home'), meta: {hasTabbar: true, top: 0}},
 
-      {path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {auth: true, hasTabbar: true, top: 0}},
+      {path: 'Inform', name: 'Inform', component: cmp('/inform/Inform'), meta: {hasTabbar: true, top: 0}},
 
-      {path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {auth: true, hasTabbar: true, top: 0}}
+      {path: 'MyParty', name: 'MyParty', component: cmp('/my/MyParty'), meta: {hasTabbar: true, top: 0}}
     ]
   },
 
@@ -59,9 +59,9 @@ export default [
 
   {path: '/Comment/:title', name: 'Comment', component: cmp('/palm/Comment')},
   {path: '/FoundOrganization/:title', name: 'FoundOrganization', component: cmp('/palm/FoundOrganization')},
-  {path: '/password', name: 'password', component: cmp('/my/password')},
-  {path: '/integration', name: 'integration', component: cmp('/my/integration')},
-  {path: '/message', name: 'message', component: cmp('/interact/message')},
+  {path: '/password', name: 'password', component: cmp('/my/password'), meta: {auth: true}},
+  {path: '/integration', name: 'integration', component: cmp('/my/integration'), meta: {auth: true}},
+  {path: '/message', name: 'message', component: cmp('/interact/message'), meta: {auth: true}},
   {path: '/MemberInteract', name: 'MemberInteract', component: cmp('/interact/MemberInteract')},
   {path: '/comments', name: 'comments', component: cmp('/pictureLink/comments')},
   {path: '/forumSave', name: 'forumSave', component: cmp('/forum/forumSave')},

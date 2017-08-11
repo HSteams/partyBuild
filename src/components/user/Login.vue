@@ -22,10 +22,10 @@
 </template>
 
 <script>
-  import { Indicator, MessageBox } from 'mint-ui'
+  import {Indicator, MessageBox} from 'mint-ui'
   export default {
     name: 'loginPage',
-    components: { Indicator, MessageBox },
+    components: {Indicator, MessageBox},
     data () {
       return {
         header: {
@@ -56,8 +56,10 @@
 
           // 根据状态跳转登录后的页面
           var toPath = _this.$route.query.toPath
+          var fromPath = _this.$route.query.fromPath
           if (toPath) {
-            _this.$router.push(toPath)
+            console.log({path: toPath, query: fromPath})
+            _this.$router.push({path: toPath, query:{fromPath: fromPath} })
           } else {
             _this.$router.push('/home')
           }
@@ -91,39 +93,39 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
 
-  .login{
+  .login {
     background-color: #CC000D;
     height: 100%;
   }
 
-  .logo{
+  .logo {
     display: block;
     margin: 40px auto;
     width: 60%;
   }
 
-  #login_form{
+  #login_form {
     margin-top: 40px;
   }
 
-  .input{
+  .input {
     margin: 0 30px 20px;
     background: red;
     border-radius: 4px;
     height: 40px;
   }
 
-  .textField{
-    font-size: 20px!important;
+  .textField {
+    font-size: 20px !important;
     background-color: transparent;
-    width: 95%!important;
-    height: 100%!important;
-    color: white!important;
+    width: 95% !important;
+    height: 100% !important;
+    color: white !important;
     border: none;
     outline: none;
   }
 
-  .login_btn{
+  .login_btn {
     display: block;
     margin: 5px auto;
     font-size: 24px;
@@ -134,7 +136,6 @@
     height: 50px;
     width: 80%;
   }
-
 
 
 </style>
