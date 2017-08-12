@@ -22,7 +22,7 @@ var store = new Vuex.Store({
       return this._token
     },
     // 用户信息
-    _user: {},
+    _user: null,
     set user (user) {
       this._user = user
       localStorage.setItem('user', JSON.stringify(user))

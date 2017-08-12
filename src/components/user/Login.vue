@@ -53,13 +53,14 @@
           }
           // vuex管理用户登录
           _this.$store.commit('login', {token: data.token, user: data.data})
+          console.log({token: data.token, user: data.data})
 
           // 根据状态跳转登录后的页面
           var toPath = _this.$route.query.toPath
           var fromPath = _this.$route.query.fromPath
           if (toPath) {
             console.log({path: toPath, query: fromPath})
-            _this.$router.push({path: toPath, query:{fromPath: fromPath} })
+            _this.$router.push({ path: toPath, query: {fromPath: fromPath} })
           } else {
             _this.$router.push('/home')
           }

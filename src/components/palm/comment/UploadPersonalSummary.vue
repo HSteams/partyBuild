@@ -48,7 +48,7 @@
 //        接收子组件数据
       handleAccept (pic) {
         this.picList.push(pic)
-//        console.log(this.picList)
+        console.log(this.picList)
       },
 //      FormData提交审核
       handleSubmit () {

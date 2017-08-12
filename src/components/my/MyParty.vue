@@ -6,7 +6,7 @@
      <img :src='personData' alt="" v-if="personData">
       <img :src="img1" alt="" v-if="!personData">
       <div id="div1"></div>
-    </div>
+     </div>
     <div class="div1">
       <div @click="message">
         <img src="../../assets/img/myParty/info@2x.png" alt="">

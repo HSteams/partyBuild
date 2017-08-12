@@ -6,37 +6,39 @@
     </div>
     <div class="scroll-content has-header">
      <!-- <h1>hello memberInteract!</h1>-->
-
       <mt-loadmore style="margin-top: 40px;background-color: #ececec">
           <ul v-for="item in commentList">
           <li class="lig"><img :src="item.header" alt="" class="img1"></li>
            <li class="li1"><button class="btn1">党员互动</button><span>{{ item.username}}</span>
-             <div> <img src="./img/time.png" alt=""> <span>{{item.currentTime}}</span>
-             <img src="./img/voice.png" alt=""><span>公开</span></div>
-
+             <div> <img :src="time" alt=""> <span>{{item.currentTime}}</span>
+             <img :src="voice" alt=""><span>公开</span></div>
               </li>
             <li class="li3"><span>{{item.content}}</span></li>
-
-        </ul>
+         </ul>
 
       </mt-loadmore>
-      <div class="imgFix" @click="save"><img src="./img/btn.png" alt="" style="width: 60px;height: 60px;"></div>
+      <div class="imgFix" @click="save"><img :src="btn" alt="" style="width: 60px;height: 60px;"></div>
     </div>
 
   </div>
 </template>
-
-
 <script>
+  import time from './img/time.png'
+  import voice from './img/voice.png'
+  import btn from './img/btn.png'
   export default {
     name: '',
     data () {
       return {
         title: '',
-        commentList: ''
+        commentList: '',
+        time: time,
+        voice: voice,
+        btn: btn
       }
     },
     activated () {
+      this.commentList = []
       this.title = this.$route.params.title
       console.log(this.$route.params)
       this.getData()

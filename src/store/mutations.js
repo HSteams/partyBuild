@@ -6,5 +6,8 @@ export default {
   logout (state) {
     state.token = ''
     state.user = ''
+  },
+  changeUser (state, user) {
+    state.user = user
   }
 }

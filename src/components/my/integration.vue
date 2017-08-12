@@ -1,7 +1,8 @@
 <template>
   <div>
-
-    <img src="../../assets/img/myParty/jifen@2x.png" alt="" class="img1 has-header">
+    <div class="has-header">
+    <img :src="jifen" alt="" class="img1">
+    </div>
     <div class="jiFen">
       <div>
         <img class="img5" src="../../assets/img/myParty/pointdetail@2x.png" alt="">
@@ -20,9 +21,11 @@
         <span></span>
       </div>
     </div>
+
   </div>
 </template>
 <script>
+  import jifen from '../../assets/img/myParty/jifen@2x.png'
   export default {
     data () {
       return {
@@ -32,25 +35,29 @@
         integral: {
           page: 2,
           rows: 10
-        }
+        },
+        totalScore: '',
+        jifen: jifen
       }
     },
-    created () {
-      this.getData()
-    },
-    methods: {
-      getData () {
-        this.$http.integralList({page: 1, rows: 1}).then(function (res) {
-          console.log(res)
-        })
-      }
+    activated () {
+      console.log(this.$store.getters.user.totalScore)
+      this.totalScore = this.$store.getters.user.totalScore
     }
   }
 </script>
 <style lang="less" scoped>
   .img1 {
     width: 100%;
-    background-color: #c7010b;
+    position: relative;
+   /* :after{
+      content: '';
+      attr('good day');
+      position: absolute;
+      left:0;
+      right:0;
+      top:0;
+    }*/
   }
 
   .jiFen {
@@ -61,11 +68,7 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.4);
       line-height: 45px;
     }
-    >*{
-      margin-left: 10px;
-    }
   }
-
   .img5 {
     width: 40px;
     vertical-align: middle;
@@ -75,5 +78,13 @@
     width: 20px;
     vertical-align: middle;
     margin-left: 90%;
+  }
+  .div1{
+    position: relative;
+    text-align: center;
+    top:35%;
+    z-index: 2000;
+    color: white;
+    font-size: 25px;
   }
 </style>
