@@ -5,7 +5,7 @@
     <div class="scroll-content has-header">
 
       <div>
-        <img src="../../assets/img/homePage/section1/orgnization/banner1.png"
+        <img :src="imageUrl"
              alt="" class="img-style">
       </div>
       <!--多列布局-->
@@ -18,13 +18,15 @@
 <script>
   import muchColData from '../../appConfig/organization'
   import MuchColLayout from '../../components/common/muchColLayout/MuchColLayout'
+  import banner from '../../assets/img/homePage/section1/orgnization/banner1.png'
   export default {
     name: 'organization',
     components: { MuchColLayout },
     data () {
       return {
         title: '',
-        muchColData: muchColData
+        muchColData: muchColData,
+        imageUrl: banner
       }
     },
     activated () {
