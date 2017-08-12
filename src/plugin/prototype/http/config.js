@@ -1,7 +1,6 @@
 /**
  * Created by fjl on 2017/7/14.
  */
-
 let base = 'http://192.168.1.110:8081/hhdj'
 export default {
   login: `${base}/user/userLogin.do`,

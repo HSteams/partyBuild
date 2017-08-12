@@ -59,7 +59,7 @@
           var fromPath = _this.$route.query.fromPath
           if (toPath) {
             console.log({path: toPath, query: fromPath})
-            _this.$router.push({ path: toPath, query: {fromPath: fromPath} })
+            _this.$router.push({path: toPath, query: {from: fromPath}})
           } else {
             _this.$router.push('/home')
           }
