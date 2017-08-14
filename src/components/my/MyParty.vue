@@ -43,8 +43,9 @@
         personData: ''
       }
     },
-    mounted () {
-      this.getData()
+    activated () {
+     // this.getData()
+      this.personData = this.$store.getters.user.header
     },
     methods: {
       getData () {
@@ -54,8 +55,6 @@
         })
       },
       logout () {
-        this.$store.commit('logout')
-        this.$router.push('/Home')
         MessageBox.confirm('确定执行此操作').then(action => {
           this.$store.commit('logout')
           this.$router.push('/home')

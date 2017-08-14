@@ -7,8 +7,8 @@
     <viwe-pager :data="swipeData" @clickPic="goViwePagerDetail"></viwe-pager>
     <!--多列布局-->
     <much-col-layout :data="muchColData" @clickItem="goMuchColContent"></much-col-layout>
-    <img class="img" src="../../assets/img/homePage/banner01.png" alt="">
-      <div class="div2">
+    <img class="img" :src="img" alt="">
+      <div class="div2" :style="{backgroundImage:'url('+ Column +')'}">
        <picture-col :message="pictures" @clickItem="goMuchCols"></picture-col>
         <!--<a @click="a1"></a><a @click="a2"></a> <a @click="a3"></a><a @click="a4"></a><a @click="a5"></a>-->
       </div>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+  import img from '../../assets/img/homePage/banner01.png'
+  import Column from '../../assets/img/homePage/specialColumn.png'
   import pictureCol from '../common/muchColLayout/pictureCol.vue'
   import pictures from '../../appConfig/picture'
   import muchColData from '../../appConfig/homeMuchSelect'
@@ -36,7 +38,9 @@
         newsType: 0,
         swipeData: null,
         muchColData: muchColData,
-        pictures: pictures
+        pictures: pictures,
+        Column: Column,
+        img: img
       }
     },
     activated () {
@@ -88,8 +92,6 @@
   }
 
   .div2 {
-
-    background: url("../../assets/img/homePage/specialColumn.png");
     width: 100%;
     height: 180px;
     margin-top: -4.7px;
