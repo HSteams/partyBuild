@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="has-header">
-    <img :src="jifen" alt="" class="img1">
+    <div class="div2" :style="{backgroundImage:'url('+jifen+ ')'}" v-text="totalScore">
+    </div>
     </div>
     <div class="jiFen">
       <div>
@@ -9,12 +10,12 @@
         <span style="vertical-align: middle">积分明细</span>
       </div>
       <div>
-        <div>积分规则</div>
-        <img class="img3" src="../../assets/img/myParty/wenhao@2x.png" alt="">
+        <span>积分规则</span>
+        <span></span>
       </div>
       <div>
         <span>签到</span>
-        <span></span>
+        <img class="img3" src="../../assets/img/myParty/wenhao@2x.png" alt="">
       </div>
       <div>
         <span>分享</span>
@@ -41,7 +42,7 @@
       }
     },
     activated () {
-      console.log(this.$store.getters.user.totalScore)
+      console.log(this.totalScore)
       this.totalScore = this.$store.getters.user.totalScore
     }
   }
@@ -49,24 +50,16 @@
 <style lang="less" scoped>
   .img1 {
     width: 100%;
-    position: relative;
-   /* :after{
-      content: '';
-      attr('good day');
-      position: absolute;
-      left:0;
-      right:0;
-      top:0;
-    }*/
   }
 
   .jiFen {
-    margin-top: -5px;
+    padding-left: 10px;
     div {
       height: 45px;
       width: 100%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.4);
       line-height: 45px;
+
     }
   }
   .img5 {
@@ -76,15 +69,18 @@
 
   .img3 {
     width: 20px;
-    vertical-align: middle;
-    margin-left: 90%;
+  vertical-align: middle;
+    margin-left: 75%;
   }
-  .div1{
-    position: relative;
+  .div2{
+    width:100%;
+    height:125px;
+    background-size: 100% 125px;
+    background-repeat: no-repeat;
     text-align: center;
-    top:35%;
-    z-index: 2000;
+    line-height: 125px;
     color: white;
     font-size: 25px;
   }
+
 </style>

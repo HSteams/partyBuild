@@ -2,7 +2,7 @@
 <template>
   <div class="memberInteract">
     <div class="div1">
-      <input type="text" placeholder=" 🔍 在党员云互动搜索">
+      <input type="text" placeholder=" 在党员云互动搜索">
     </div>
     <div class="scroll-content has-header">
      <!-- <h1>hello memberInteract!</h1>-->
@@ -23,8 +23,8 @@
   </div>
 </template>
 <script>
-  import time from './img/time.png'
-  import voice from './img/voice.png'
+  import time from './img1/time.png.zip'
+  import voice from './img1/voice.png.zip'
   import btn from './img/btn.png'
   export default {
     name: '',
