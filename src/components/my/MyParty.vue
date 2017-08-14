@@ -5,7 +5,7 @@
     <div class="div2">
      <img :src='personData' alt="" v-if="personData">
       <img :src="img1" alt="" v-if="!personData">
-      <div id="div1"></div>
+      <div id="div1" v-text="$store.getters.user? $store.getters.user.username:'马上登录，获取更多用户信息'"></div>
      </div>
     <div class="div1">
       <div @click="message">
@@ -59,7 +59,6 @@
         MessageBox.confirm('确定执行此操作').then(action => {
           this.$store.commit('logout')
           this.$router.push('/Home')
-          document.getElementById('div1').innerHTML = '马上登录，获取更多党建咨询'
         }).catch(action => {})
       },
       message () {
