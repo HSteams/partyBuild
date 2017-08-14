@@ -25,8 +25,8 @@
       </div>
     </div>
     <div class="align-center">
-      <!--v-show="$store.getters.token"-->
-      <button @click="logout" class="btn2" >退出登录</button>
+
+      <button @click="logout" class="btn2"  v-show="$store.getters.token">退出登录</button>
     </div>
   </div>
 </template>
