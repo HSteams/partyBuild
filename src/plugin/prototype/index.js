@@ -5,5 +5,5 @@ export default function (Vue) {
   Vue.prototype.$Indicator = Indicator
   Vue.prototype.$Toast = Toast
   // 提示停留时间
-  Vue.prototype.$duration = 3000
+  Vue.prototype.$duration = 2000
 }

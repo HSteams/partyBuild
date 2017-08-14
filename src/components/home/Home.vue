@@ -2,7 +2,7 @@
 <!--首页-->
 <template>
   <div class="home has-header has-footer">
-    <img class="logo" src="../../assets/img/homePage/logo.png"/>
+    <!--<img class="logo" src="../../assets/img/homePage/logo.png"/>-->
     <!--轮播图-->
     <viwe-pager :data="swipeData" @clickPic="goViwePagerDetail"></viwe-pager>
     <!--多列布局-->
@@ -30,7 +30,8 @@
       return {
         header: {
           hiddenBack: true,
-          title: ''
+          title: '',
+          hasLogo: true
         },
         newsType: 0,
         swipeData: null,

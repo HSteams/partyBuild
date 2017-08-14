@@ -7,7 +7,7 @@ export default {
   // 新闻列表和详情
   getNewsContent: `${base}/news/newsContent.do`,
 
-  getNewsList: `${base}/news/newsList.do`,
+  getNewsList: `${base}/news/newsList1.do`,
 
   getUserInfo: `${base}/user/userInfo.do`,
   changeUserInfo: `${base}/user/modifyInfo.do`,

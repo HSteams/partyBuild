@@ -35,10 +35,8 @@
     position: fixed;
     height: @footer-height;
     .tabbar_item{
-      padding: 4px;
       color: gray!important;
       .mint-tab-item-icon{
-        height: 20px;
         img{
           width: auto;
           margin: auto;
