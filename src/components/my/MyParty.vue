@@ -25,7 +25,8 @@
       </div>
     </div>
     <div class="align-center">
-      <button @click="logout" class="btn2">退出登录</button>
+      <!--v-show="$store.getters.token"-->
+      <button @click="logout" class="btn2" >退出登录</button>
     </div>
   </div>
 </template>
@@ -57,7 +58,7 @@
       logout () {
         MessageBox.confirm('确定执行此操作').then(action => {
           this.$store.commit('logout')
-          this.$router.push('/home')
+          this.$router.push('/Home')
           document.getElementById('div1').innerHTML = '马上登录，获取更多党建咨询'
         }).catch(action => {})
       },
@@ -133,7 +134,7 @@
       height: 36px;
       background-color: #c7010b;
       border: 0;
-      top: 65%;
+      position:relative;
       border-radius: 10px;
       color: white;
       font-size: 18px;
