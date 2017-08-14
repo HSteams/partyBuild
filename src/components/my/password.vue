@@ -41,7 +41,6 @@
   .Form {
     margin-top: 40px;
   }
-
   .text {
     width: 90%;
     height: 40px;
@@ -51,11 +50,9 @@
     font-size: 18px;
     margin-left: 5%;
   }
-
   p {
     margin-left: 5%;
   }
-
   .btn {
     width: 100px;
     height: 30px;
@@ -65,7 +62,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%;
+    top: 60%;
 
     margin: auto;
     font-size: 16px;

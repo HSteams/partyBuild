@@ -45,8 +45,8 @@
     },
     activated () {
       // alert('wqe')
-      this.personData = this.$store.getters.user
-      // this.getData()
+     // this.personData = this.$store.getters.user
+      this.getData()
       // mconsole.log(this.$store.getters.token)
     },
     methods: {
