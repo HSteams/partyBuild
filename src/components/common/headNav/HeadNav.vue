@@ -21,6 +21,7 @@
         </mt-button>
       </div>
     </mt-header>
+    <img v-show="header.hasLogo" class="logo" src="./logo.png"/>
   </div>
 </template>
 
@@ -33,6 +34,7 @@
           hiddenBack: true,
           hidden: false,
           backColor: '#C7010B',
+          hasLogo: false,
           leftBtns: [],
           rightBtns: []
         }
@@ -91,6 +93,16 @@
           vertical-align: middle;
         }
       }
+    }
+    /*项目logo*/
+
+    @logo-height: 36px;
+    .logo{
+      position: absolute;
+      left: 0.5*@header-height - 0.5*@logo-height;
+      top: 0.5*@header-height - 0.5*@logo-height;
+      height: @logo-height;
+      z-index: 100;
     }
   }
 </style>
