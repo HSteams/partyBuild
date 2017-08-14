@@ -39,6 +39,7 @@
           page: this.page, rows: 8, type: this.$route.params.type
         }
         var _this = this
+        this.$Indicator.open()// 显示加载等待
         this.$http.getNewsList(param).then(function (res) {
           var data = res.data
           _this.newsDatas = data.rows

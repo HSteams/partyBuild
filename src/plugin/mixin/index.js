@@ -1,3 +1,4 @@
+import { Indicator, Toast } from 'mint-ui'
 export default function (Vue) {
   Vue.mixin({
     methods: {
@@ -41,6 +42,10 @@ export default function (Vue) {
       }
       headNav.clickLeftBtn = this.clickLeftBtn
       headNav.clickRightBtn = this.clickRightBtn
+    },
+    deactivated () {
+      Indicator.close()
+      Toast.close()
     }
   })
 }

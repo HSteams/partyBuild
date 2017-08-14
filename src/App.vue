@@ -45,7 +45,7 @@
       height: 0;
     }
     .slide{
-      transition: all 0.5s;
+      transition: all 0.3s;
     }
     .slide-left-enter, .slide-right-leave-to {
 

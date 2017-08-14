@@ -12,7 +12,6 @@
 </template>
 
 <script>
-  import { Indicator } from 'mint-ui'
   import HeadNav from '../common/headNav/HeadNav.vue'
   export default {
     components: {HeadNav},
@@ -28,21 +27,16 @@
       this.params = this.$route.params
       this.data = {}
       var _this = this
-      Indicator.open()// 显示加载等待
+      this.$Indicator.open()// 显示加载等待
       this.$http.getNewsContent({newsId: this.params.id}).then(function (res) {
         var data = res.data
-        Indicator.close()// 隐藏加载等待
         if (data.code === 1) {
           _this.data = data.data
         } else {
 
         }
       }).catch(function () {
-        Indicator.close()// 隐藏加载等待
       })
-    },
-    deactivated () {
-      Indicator.close()// 隐藏加载等待
     }
   }
 </script>
